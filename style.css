@@ -3,3 +3,18 @@
      padding: 0;
      margin: 0;
 }
+body{
+     height: 100vh;
+     font-size: 10px;
+}
+.flex {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.container {
+     flex-direction: column;
+}
+#survey-form {
+     flex-direction: column;
+}
