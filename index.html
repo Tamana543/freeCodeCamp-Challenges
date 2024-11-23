@@ -4,9 +4,19 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-     <title>FreeCode Challenges</title>
+     <title>FreeCode Challenges-Survey</title>
 </head>
 <body>
+     <h1 id="title">freeCodeCamp Survey Form</h1>
+     <p id="description">Thank you for taking the time to help us improve the platform</p>
+     <form action="submit" id="survey-form">
+     <label for="name" id="name-label">Name</label>
+     <input type="text" id="name" required placeholder="Name">
+     <label for="email" id="email-label">Email</label>
+     <input type="email" formtarget="email" id="email" placeholder="Email">
+     <label for="age" id="number-label">Age</label>
+     <input type="number" id="age" min="18" max="99" placeholder="Age"> 
+     </form>
      
 </body>
 </html>
