@@ -6,9 +6,9 @@
      <link rel="stylesheet" href="style.css">
      <title>FreeCode Challenges-Survey</title>
 </head>
-<body>
+<body class="flex">
      <div class="container flex">
-     <h1 id="title">freeCodeCamp Survey Form</h1>
+     <h1 id="title">FreeCodeCamp Survey Form</h1>
      <p id="description" class="Information">Thank you for taking the time to help us improve the platform</p>
      <form action="submit" id="survey-form" class="flex">
      <label for="name" id="name-label">Name</label>
@@ -39,9 +39,8 @@
     <label>
      Not Yet
     </label>
-     </form>
-     <p class="Information">
-          What would you like to see improved? (Check all that apply)
+    <p class="Information">
+         What would you like to see improved? (Check all that apply)
      </p>
      <input type="checkbox" name="checkbox" id="checkbox-Front-end" value="Front-end">
      <label for="checkbox-Front-end">Front-end Project </label>
@@ -52,11 +51,12 @@
      <label for="checkbox-Forum">Forum </label>
      <input type="checkbox" name="checkbox" id="checkbox-Additional-courses" value="Additional-Courses">
      <label for="checkbox-Additional-courses">Additional Courses </label>
-
+     
      <p class="Information">Any comments or suggestions?</p>
      <textarea name="textarea" id="textarea" ></textarea>
-
+     
      <input type="submit" value="submit" id="submit_btn">
+</form>
 </div>
 </body>
 </html>
