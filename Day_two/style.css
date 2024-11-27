@@ -19,13 +19,38 @@ body {
 }
 .container {
      flex-direction: column;
+     background-color: rgb(238, 238, 238);
+     margin: 1%;
+     border-radius: 2%;
 }
 .heading {
-     margin-top: 5%;
+     margin: 2% 0% 1% 0%;
      flex-direction: column;
      gap: 3%;
+
 }
 .main {
      min-height: 100vh;
      flex-direction: column;
+}
+#img-div {
+     flex-direction: column;
+     margin: 2%;
+     background-color: #fff;
+}
+#image {
+     margin-bottom: 1%;
+}
+#img-caption {
+     margin-bottom: 2%;
+}
+.conatins {
+     flex-direction: column;
+     margin: 2% 20%;
+     
+}
+.sub_title {
+     margin-bottom: 5%;
+
+     font-size: 1.3rem;
 }
