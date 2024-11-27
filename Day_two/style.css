@@ -54,3 +54,19 @@ body {
 
      font-size: 1.3rem;
 }
+.list {
+     flex-direction: column;
+     align-items: flex-start;
+
+     margin: 0% 19%;
+     font-size: 1.1rem;
+}
+.list_item {
+     margin: 2% 0%;
+     line-height: 30px;
+     color: #5f5d5d;
+}
+.bold {
+     font-weight: 900;
+     color: #000 !important;
+}
