@@ -89,3 +89,37 @@ footer {
      border-bottom: 1px solid black;
      transition: all 0.5s ease-in-out;
 }
+@media (max-width : 500px) {
+     #image {
+          width: 90%;
+     }
+     #img-caption {
+          font-size: 0.6rem;
+          text-align: center;
+     }
+     .sub_title {
+          font-size: 0.9rem;
+     }
+     .conatins {
+          margin: 2% 9%;
+         
+     }
+     .list {
+          font-size: 0.8rem ;
+          margin: 0% 10%;
+     }
+     .list_item {
+          line-height: 20px;
+     }
+     .second {
+          width: 84%;
+          
+         
+          font-size: 1rem;
+          
+      }
+      .sub-title_4 {
+          font-size: 0.8rem;
+          text-align: center;
+      }
+}
