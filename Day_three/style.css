@@ -5,10 +5,11 @@
 }
 body {
      height: 100vh;
+     scroll-behavior: smooth;
 }
 p,ul {
      color: #656a70;
-   
+   font-size: 1.2rem;
      line-height: 1.4;
 
 }
@@ -60,6 +61,8 @@ li {
      font-size: 2rem;
      margin:  1% 0%;
      scroll-margin-top: 50px;
+     border-left: 2px solid #606062;
+     padding-left: 1%;
 }
 .m-2 {
      margin-top:3% !important;
@@ -73,4 +76,10 @@ li {
      line-height: 2;
      color: #606062;
      border-radius: 5px;
+}
+.list_ele-sub {
+     padding: 0% 4% ;
+}
+#Reference {
+     margin-bottom: 5%;
 }
