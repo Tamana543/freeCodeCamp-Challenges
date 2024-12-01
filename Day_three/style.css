@@ -43,6 +43,7 @@ li {
      border-bottom: 2px solid #9d9ea0;
      
 }
+
 .navbar a:link {
      color: #606062;
      text-decoration: none;
@@ -82,4 +83,23 @@ li {
 }
 #Reference {
      margin-bottom: 5%;
+}
+
+@media (max-width:700px){
+    .container{
+     flex-direction: column;
+    }
+    .navbar {
+     width: 90%;
+     height: 50%;
+     margin: 3% auto;
+     overflow-y: scroll;
+     border: 2px solid #656a70;
+
+   
+    }
+    .navbar_heading {
+     font-size: 1rem;
+     text-wrap: nowrap;
+    }
 }
