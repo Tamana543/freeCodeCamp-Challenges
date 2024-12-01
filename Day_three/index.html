@@ -108,7 +108,7 @@
                          To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:
                          <p class="code">
                               function greetMe(yourName) { alert("Hello " + yourName); }
-greetMe("World");
+                              <br/>greetMe("World");
                          </p>
                        </p>  
                     </div>
@@ -138,19 +138,21 @@ greetMe("World");
                         <p class="code">
                          var x = 42.
                         </p>
-                        This syntax can be used to declare both local and global variables.
+                        <p>This syntax can be used to declare both local and global variables.</p>
 
-By simply assigning it a value. For example,
+                         <p>By simply assigning it a value. For example,</p>
                          <p class="code">
                               x = 42.  
                          </p>
-                         This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant.
+                         <p>This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant.
+                             <br/> With the keyword let. For example,
+                         </p> 
 
-With the keyword let. For example,
+                         
 <p class="code">
      let y = 13. 
 </p>
-This syntax can be used to declare a block scope local variable. See Variable scope below.
+<p>This syntax can be used to declare a block scope local variable. See Variable scope below.</p> 
                     </div>
                </section>
                <section class="main-section" id="Variable_scope">
@@ -165,7 +167,7 @@ This syntax can be used to declare a block scope local variable. See Variable sc
                          <p class="code">
                               if (true) { var x = 5; } console.log(x); // 5
                          </p>
-                         This behavior changes, when using the let declaration introduced in ECMAScript 2015.
+                         <p>This behavior changes, when using the let declaration introduced in ECMAScript 2015.</p> 
                          <p class="code">
                               if (true) { let y = 5; } console.log(y); // ReferenceError: y is
                               not defined   
@@ -202,15 +204,15 @@ This syntax can be used to declare a block scope local variable. See Variable sc
                               You cannot declare a constant with the same name as a function or variable in the same scope. For example:
                          </p>
                          <p class="code">
-                              // THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
-WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
-//statements }
+                              // THIS WILL CAUSE AN ERROR function f() {}; const f = 5; <br/> // THIS
+                              WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+                                   //statements }
                          </p>
                          <p class="content_sec">
                               However, object attributes are not protected, so the following statement is executed without problems.
                          </p>
                          <p class="code">
-                              const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+                              const MY_OBJECT = {"key": "value"}; <br/> MY_OBJECT.key =
 "otherValue";
                          </p>
                     </div>

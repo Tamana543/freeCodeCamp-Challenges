@@ -64,3 +64,13 @@ li {
 .m-2 {
      margin-top:3% !important;
 }
+.code {
+     margin: 2% 0%;
+     margin-left: 4%;
+     background-color: #f7f7f7;
+     font-size: 90%;
+     word-spacing: 6px;
+     line-height: 2;
+     color: #606062;
+     border-radius: 5px;
+}
