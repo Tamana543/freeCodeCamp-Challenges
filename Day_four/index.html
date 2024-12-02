@@ -4,12 +4,65 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous"
-     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-     >
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="chrome-extension://dbaahnceahihnikjnogoijfdccdonlia/styles/popup_inject.css">
      <title>Day_four</title>
 </head>
 <body>
-     
+   <div class="container">
+     <div class="header" id="header">
+          <img src="Img/product-landing-page-logo.png"
+          id="header-img"
+          alt="Logo png">
+          
+          <nav id="nav-bar">
+               <a href="#" class="nav-link">Features</a>
+               <a href="#" class="nav-link">How It Works</a>
+               <a href="#" class="nav-link">Pricing</a>
+               <a href="#" class="nav-link">Contact Me</a>
+     </nav>
+</div>
+<main class="main">
+     <section class="first">
+          <h2 class="title">Handcrafted, home-made masterpieces</h2>
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
+               <input type="email" name="email" id="email"
+               
+               placeholder="Enter your Email Here">
+               <input type="submit" value="submit"
+               id="submit">
+          </form>
+     </section>
+     <section id="features">
+          <div class="feature-first">
+               <div class="logo">
+               <img src="Img/fire.png" alt="Fire SVG" >
+               </div>
+               <div class="description">
+                    <h3 class="desc_heading">Premium Materials</h3>
+                    <p class="desc_description">Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+               </div>
+          </div>
+          <div class="feature-sec">
+               <div class="logo">
+               <img src="Img/Fast Delivery.png" alt="Truck SVG">
+               </div>
+               <div class="description">
+                    <h3 class="desc_heading">Premium Materials</h3>
+                    <p class="desc_description">Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+               </div>
+          </div>
+          <div class="feature-third">
+               <div class="logo">
+                    <img src="Img/check mark.jpg" alt="quality SVG">
+               </div>
+               <div class="description">
+                    <h3 class="desc_heading">Fast Shipping</h3>
+                    <p class="desc_description">We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+               </div>
+          </div>
+     </section>
+</main>
+   </div> 
 </body>
 </html>
