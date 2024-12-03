@@ -17,6 +17,7 @@ align-items: center;
 }
 .container {
      width: 80%;
+     flex-direction: column;
 }
 .header {
      margin-top: 2%;
@@ -39,4 +40,38 @@ color: #6a4a53;
 #nav-bar a:hover {
      border-bottom: 1px solid #6a4a53;
      color: #000;
+}
+.first {
+     flex-direction: column;
+     gap: 5%;
+     width: 100%;
+}
+.title {
+     margin: 2% 0%;
+}
+#form {
+     flex-direction: column;
+}
+#email {
+     margin: 2% 0% 5% 0%;
+  padding: 1.5%;
+}
+#submit {
+     background-color: #e6be1c;
+     color: #0c1000;
+     padding: 1% 5%;
+     border: none;
+     font-size: 1.1rem;
+     text-transform: uppercase;
+}
+.bold {
+     font-weight: 600;
+}
+.logo {
+     background-color: #ffffffbf;
+    
+}
+.logo img {
+     width: 65%;
+     background-color: white;
 }
