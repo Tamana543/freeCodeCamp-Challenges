@@ -1,0 +1,42 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+body {
+     flex-direction: column;
+    
+}
+.flex {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.grid{
+     display: grid;
+}
+.container {
+     width: 80%;
+}
+.header {
+     margin-top: 2%;
+     justify-content:space-between ;
+     width: 100%;
+}
+.header img {
+     width: 40%;
+}
+#nav-bar {
+gap: 3%;
+width: 60%;
+font-size: 1.2rem;
+
+}
+#nav-bar a {
+     text-decoration: none;
+color: #6a4a53;
+}
+#nav-bar a:hover {
+     border-bottom: 1px solid #6a4a53;
+     color: #000;
+}
