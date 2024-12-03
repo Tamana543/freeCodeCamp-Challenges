@@ -75,3 +75,27 @@ color: #6a4a53;
      width: 65%;
      background-color: white;
 }
+.video {
+     margin: 10%;
+}
+video {
+     box-shadow: 4px 11px 13px 0px #00000061
+}
+.cards{
+     justify-content: space-around;
+     margin: 8%;
+     width: 100%;
+}
+.card {
+     border: 1px solid #000;
+     width: 25%;
+     flex-direction: column;
+    
+}
+.card_heading {
+     font-size: 1.3rem;
+    height: 100%;
+     width: 100%;
+     padding: 3% 0%;
+     background-color: #dddddd;
+}
