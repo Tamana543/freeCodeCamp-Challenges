@@ -5,7 +5,7 @@
 }
 body {
      flex-direction: column;
-    
+    position: relative;
 }
 .flex {
 display: flex;
@@ -59,10 +59,14 @@ color: #6a4a53;
 #submit {
      background-color: #e6be1c;
      color: #0c1000;
-     padding: 1% 5%;
+     padding: 3% 5%;
      border: none;
      font-size: 1.1rem;
      text-transform: uppercase;
+}
+#submit:hover {
+     background-color: #e5cd6cd3;
+     cursor: pointer;
 }
 .bold {
      font-weight: 600;
@@ -127,4 +131,21 @@ video {
      background-color: #f1c40f;
      border: none;
      text-transform: uppercase;
+}
+.footer {
+     flex-direction: column;
+     background-color: #dddddd;
+     width: 100%;
+     position: absolute;
+     bottom: -5%;
+     padding: 0.5% 0%;
+     height: 65px;
+}
+.footer_head {
+text-align: center;
+     width: 100%;
+}
+.footer_head p {
+     display: inline;
+     margin: 1% 2% 0% 2%;
 }
