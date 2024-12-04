@@ -149,3 +149,13 @@ text-align: center;
      display: inline;
      margin: 1% 2% 0% 2%;
 }
+@media (max-width:500px){
+    .container {
+     width: 100%;
+    }
+     #header {
+          flex-direction: column;
+          width: 100vh;
+          margin-left: 23%;
+     }
+}
