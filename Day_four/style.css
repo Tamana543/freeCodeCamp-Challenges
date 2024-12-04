@@ -72,7 +72,7 @@ color: #6a4a53;
     width: 19%;
 }
 .logo img {
-     width: 80%;
+     width: 90%;
      background-color: white;
 }
 #features {
@@ -91,13 +91,14 @@ video {
 }
 .cards{
      justify-content: space-around;
-     margin: 8%;
+
      width: 100%;
 }
 .card {
      border: 1px solid #000;
-     width: 25%;
+     width: 30%;
      flex-direction: column;
+   
     
 }
 .card_heading {
@@ -106,4 +107,24 @@ video {
      width: 100%;
      padding: 3% 0%;
      background-color: #dddddd;
+}
+.price {
+     margin: 5% 0% 3% 0%;
+     font-size: 1.5rem;
+}
+.card_features {
+     list-style-type: none;
+     flex-direction: column;
+     
+}
+.card_features li {
+     margin: 3% 0%;
+}
+.card_btn {
+     margin: 5% ;
+     font-size: 1.4rem;
+     padding: 2% 6%;
+     background-color: #f1c40f;
+     border: none;
+     text-transform: uppercase;
 }
