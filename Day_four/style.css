@@ -69,12 +69,20 @@ color: #6a4a53;
 }
 .logo {
      background-color: #ffffffbf;
-    
+    width: 19%;
 }
 .logo img {
-     width: 65%;
+     width: 80%;
      background-color: white;
 }
+#features {
+     justify-content: flex-start;
+
+}
+.desc_description {
+     font-size: 1.1rem;
+}
+
 .video {
      margin: 10%;
 }
