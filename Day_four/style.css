@@ -156,6 +156,32 @@ text-align: center;
      #header {
           flex-direction: column;
           width: 100vh;
-          margin-left: 23%;
+          margin-left: 3%;
      }
+     .title{
+          font-size: 1rem;
+     }
+     .logo {
+          display: none;
+     }
+     .description {
+          width: 70%;
+     }
+     .desc_description {
+          margin-bottom: 3%;
+     }
+     .desc_heading{
+          margin-top: 6%;
+     }
+     video {
+width: 300px !important;
+     }
+     .cards {
+          flex-direction: column;
+     }
+     .card {
+          width: 80%;
+          margin: 3% 0%;
+     }
+}
 }
