@@ -81,7 +81,13 @@ gap: 2.5%;
 border-bottom: 2px solid black;
 cursor: pointer;
 opacity: 0.7;
+
 }
 #profile-link:hover {
      opacity: 1;
+}
+#contact {
+     width: 70vh;
+     height: 80vh;
+     margin-bottom: 2rem;
 }
