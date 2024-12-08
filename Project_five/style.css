@@ -87,7 +87,24 @@ opacity: 0.7;
      opacity: 1;
 }
 #contact {
-     width: 70vh;
-     height: 80vh;
-     margin-bottom: 2rem;
+     flex-direction: column;
+     height: 95vh;
+     margin-top: 3rem;
+     background-color: gray;
+     color: #fff;
+     gap: 3%;
+
+}
+.contact_sec {
+     gap: 4%;
+     width: 80%;
+     text-transform: capitalize;
+}
+.contact_link {
+     
+     text-decoration: none;
+     font-size: 1.1rem;
+     cursor: pointer;
+     color: #fff;
+     border-bottom: 2px solid #fff;
 }
