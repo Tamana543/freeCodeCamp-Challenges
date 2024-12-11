@@ -15,3 +15,9 @@ let cities = ["London","New York","Mumbai"]
 console.log(cities);
 cities[cities.length-1] = "Mexico City";
 console.log(cities)
+rows.push("freeCodeCamp")
+console.log(rows)
+let popped = rows.pop();
+console.log(popped);
+let pushed = rows.push(pushed);;
+console.log(pushed)
