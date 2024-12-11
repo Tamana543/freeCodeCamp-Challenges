@@ -21,3 +21,10 @@ let popped = rows.pop();
 console.log(popped);
 let pushed = rows.push(pushed);;
 console.log(pushed)
+rows = [];
+character = "Hello";
+const character = "#";
+const rows = [];
+for (let i = 0; i<count; i = i+1) {
+
+}
