@@ -1,4 +1,4 @@
-// Day_one challenge 
+// Day_one challenge MAke a Pyromid 
 let profession = "teacher";
 let age;
 console.log(age);
@@ -19,12 +19,17 @@ rows.push("freeCodeCamp")
 console.log(rows)
 let popped = rows.pop();
 console.log(popped);
-let pushed = rows.push(pushed);;
+let pushed = rows.push(pushed);
 console.log(pushed)
 rows = [];
 character = "Hello";
 const character = "#";
 const rows = [];
 for (let i = 0; i<count; i = i+1) {
-
+     rows.push(character)
+     character.repeat(i+1)
+    
+}
+for (const row of rows){
+     result = result + row + "\n"; 
 }
