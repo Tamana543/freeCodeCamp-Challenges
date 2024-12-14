@@ -33,9 +33,14 @@ for (let i = 0; i<count; i = i+1) {
 for (const row of rows){
      result = result + row + "\n"; 
 }
-function padRow(name){
-     return name;
-  
-}
+function padRow(name) {
+     return character+name;
+   }
 const call=  padRow("Tamana")
 console.log(call);
+
+function addTwoNumbers(A,B){
+     return A+B;
+     }
+     let sum = addTwoNumbers(5,10);
+     console.log(sum)
