@@ -42,5 +42,12 @@ console.log(call);
 function addTwoNumbers(A,B){
      return A+B;
      }
-     let sum = addTwoNumbers(5,10);
-     console.log(sum)
+let sum = addTwoNumbers(5,10);
+     console.log(sum);
+     function padRow(name) {
+          const test = "Testing";
+          console.log("This works!")
+          return test;
+        console.log("This works!")
+        }
+        padRow();
