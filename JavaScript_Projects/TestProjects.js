@@ -25,29 +25,21 @@ rows = [];
 character = "Hello";
 const character = "#";
 const rows = [];
-for (let i = 0; i<count; i = i+1) {
-     rows.push(character)
-     character.repeat(i+1)
-    
-}
+for (let i = 0; i < count; i = i + 1) {
+     rows.push(padRow())
+   }
 for (const row of rows){
      result = result + row + "\n"; 
 }
-function padRow(name) {
-     return character+name;
+function padRow(rowNumber,rowCount) {
+    
+  return character.repeat(rowNumber);
    }
-const call=  padRow("Tamana")
-console.log(call);
+
 
 function addTwoNumbers(A,B){
      return A+B;
      }
 let sum = addTwoNumbers(5,10);
      console.log(sum);
-     function padRow(name) {
-          const test = "Testing";
-          console.log("This works!")
-          return test;
-        console.log("This works!")
-        }
-        padRow();
+     
