@@ -50,3 +50,11 @@ let sum = addTwoNumbers(5,10);
         }else {
           console.log("This is the else block")
         }
+        
+      
+
+        while (rows.length<count) {
+      
+          rows.push(padRow(rows.length+1,count))
+         
+        }
