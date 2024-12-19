@@ -16,8 +16,8 @@ function getAverage(scores) {
 return sum/scores.length;
 }
 
-console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
-console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]));
+// console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
+// console.log(getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95]));
 
 console.log("___Second Challenge___");
 
@@ -46,6 +46,22 @@ if(score === 100){
 }
 }
 
-console.log(getGrade(96));
-console.log(getGrade(82));
-console.log(getGrade(56));
+// console.log(getGrade(96));
+// console.log(getGrade(82));
+// console.log(getGrade(56));
+
+console.log("___Third Challenge___");
+function hasPassingGrade(score) {
+  const grade = getGrade(score);
+  // console.log(grade)
+  if(grade === "F"){
+    return false;
+  }else {
+    return true;
+  }
+}
+
+
+console.log(hasPassingGrade(100));
+console.log(hasPassingGrade(53));
+console.log(hasPassingGrade(87));
