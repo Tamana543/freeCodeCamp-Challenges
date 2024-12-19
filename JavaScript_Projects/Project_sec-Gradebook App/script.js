@@ -1,12 +1,16 @@
 function getAverage(scores) {
   const data = scores;
-  const averrage= [];
-//   for(let i = data; i > 0; i++){
-//     averrage.push(i)
-//   }
-data.forEach(el => {averrage.push(el + el / data.length)});
+  let average;
+  // for(let i = data; i > 0; i++){
+  //   average.push(i)
+  // }
+data.forEach(el => {
+  // console.log( average.push(el + el / data.length))
+  average = el + el / data.length;
+ return average;
+});
 
-return averrage;
+return average;
 }
 
 console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
