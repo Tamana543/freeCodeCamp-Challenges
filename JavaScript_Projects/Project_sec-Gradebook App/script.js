@@ -65,3 +65,13 @@ function hasPassingGrade(score) {
 console.log(hasPassingGrade(100));
 console.log(hasPassingGrade(53));
 console.log(hasPassingGrade(87));
+
+console.log("___Forth Challenge___");
+// Use the getAverage function to get the class average.
+// Use the getGrade function to get the student's grade.
+// Use string concatenation (+) to build the message.
+// Be careful with the punctuation and spaces in the message.
+function studentMsg(totalScores, studentScore) {
+
+}
+console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
