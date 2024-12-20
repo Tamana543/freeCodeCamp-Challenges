@@ -74,8 +74,13 @@ const average = getAverage(totalScores);
 const grade = getGrade(studentScore);
 // console.log(grade);
 if(grade === "F"){
-  return "Class"+" " +"average:"+ average+ "."+ "Your"+" "+ "grade: " +grade +"."+ "You"+" " + "failed"+" "+"the" + " "+"course.";
+  // return "Class"+" " +"average:"+ average+ "."+ "Your"+" "+ "grade: " +grade +"."+ "You"+" " + "failed"+" "+"the" + " "+"course.";
+  return `Class average: ${average}. Your grade ${grade}. You failed the course.`
 }
 
+if(grade !== "F"){
+  // return "Class"+" " +"average:"+ average+ "."+ "Your"+" "+ "grade: " +grade +"."+ "You"+" " + "passed "+" "+"the" + " "+"course.";
+  `Class average: ${average}. Your grade ${grade}. You passed the course.`
+}
 }
 console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
