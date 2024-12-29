@@ -15,6 +15,7 @@ const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
+const locations = [];
 const monsterHealthText = document.querySelector("#monsterHealth");
 function update(location){   }
 function goTown(){
@@ -53,4 +54,10 @@ function buyHealth(){
 function buyWeapon(){
     
      }
+     // OBJECT PRACTICING
      // console.log( "You are in the town square. You see a sign that says \"Store\".");
+     // const cat = {
+     //      name: "Whiskers",
+     //      "Number of legs": 4,
+     // };
+     // console.log(cat["Number of legs"]);
