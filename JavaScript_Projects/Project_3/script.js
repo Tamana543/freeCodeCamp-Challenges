@@ -51,6 +51,7 @@ function goStore(){
 }
 function goCave(){
 //   console.log("Going to cave.");
+update(locations[2]);
 }
 function fightDragon(){
 //   console.log("Fighting dragon.");
@@ -61,20 +62,27 @@ function fightSlime(){
 function fightBeast(){
 
 }
+function buyHealth(){
+
+     if (gold >= 10) {
+          gold -=  10 ;
+          health += 10;
+          healthText.innerText= health;
+          goldText.innerText=gold;  
+     }
+}
+
+function buyWeapon(){
+    
+     }
 // initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
-function buyHealth(){
-    
-     }
-function buyWeapon(){
-    
-     }
      // OBJECT PRACTICING
      // console.log( "You are in the town square. You see a sign that says \"Store\".");
      // const cat = {
      //      name: "Whiskers",
      //      "Number of legs": 4,
      // };
-     // console.log(cat["Number of legs"]);
+     // console.log(cat["Number of legs"]);  
