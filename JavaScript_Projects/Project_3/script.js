@@ -90,24 +90,23 @@ if(gold >= 10) {
 }
 
 function buyWeapon(){
-    if(gold >= 30){
-gold-=30;
-currentWeaponIndex++;
-goldText.innerText = gold;
-let newWeapon = weapons[currentWeaponIndex].name;
-text.innerText = `You now have a ${newWeapon} .`;
-inventory.push(newWeapon);
-text.innerText+= ` In your inventory you have: ${inventory}`;
-    }
+     if(currentWeaponIndex < weapons.length){
+
+          if(gold >= 30){
+      gold-=30;
+      currentWeaponIndex++;
+      goldText.innerText = gold;
+      let newWeapon = weapons[currentWeaponIndex].name;
+      text.innerText = `You now have a ${newWeapon} .`;
+      inventory.push(newWeapon);
+      text.innerText+= ` In your inventory you have: ${inventory}`;
+          }else {
+           text.innerText = "You do not have enough gold to buy a weapon.";
+          }
+     }
      }
 // initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
-     // OBJECT PRACTICING
-     // console.log( "You are in the town square. You see a sign that says \"Store\".");
-     // const cat = {
-     //      name: "Whiskers",
-     //      "Number of legs": 4,
-     // };
-     // console.log(cat["Number of legs"]);  
+   
