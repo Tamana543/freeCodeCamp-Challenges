@@ -81,7 +81,7 @@ function goFight() {
   update(locations[3]);
   monsterHealth= monsters[fighting].health;
   monsterStats.style.display = "block";
-  monsters[fighting].name.innerText = monsterName;
+  monsterName.innerText = monsters[fighting].name ;
   monsterHealthText.innerText = monsterHealth;}
 function fightSlime(){
 fighting = 0 - monsters[0].name;
@@ -97,7 +97,8 @@ function fightDragon(){
 goFight();
      }
      function attack() {
-
+          text.innerText = "The "+ monsters[fighting].name + " attacks.";
+          text.innerText+= " You attack it with your " + weapons[currentWeaponIndex].name + ".";
      }
      function dodge(){
 
