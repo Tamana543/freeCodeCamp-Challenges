@@ -79,8 +79,10 @@ update(locations[2]);
 }
 function goFight() {
   update(locations[3]);
- monsters[fighting].health = monsterHealth;
-}
+  monsterHealth= monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsters[fighting].name.innerText = monsterName;
+  monsterHealthText.innerText = monsterHealth;}
 function fightSlime(){
 fighting = 0 - monsters[0].name;
 goFight();
