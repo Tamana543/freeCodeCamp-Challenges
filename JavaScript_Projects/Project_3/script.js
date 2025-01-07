@@ -57,7 +57,7 @@ const locations = [
 const monsters = [
      {name:"slime", level: 2, health:15},{name:"fanged beast", level:8, health:60},{name:"dragon", level:20, health:300}
 ]
-const monsterHealthText = document.querySelector("#monsterHealth");
+let monsterHealthText = document.querySelector("#monsterHealth");
 function update(location){   
      button1.innerText = location["button text"][0];
      button2.innerText = location["button text"][1];
@@ -79,7 +79,7 @@ update(locations[2]);
 }
 function goFight() {
   update(locations[3]);
- monsters[fighting].health= monsterHealth;
+ monsters[fighting].health = monsterHealth;
 }
 function fightSlime(){
 fighting = 0 - monsters[0].name;
@@ -131,7 +131,7 @@ function buyWeapon(){
           button2.onclick = sellWeapon;
      }
      }
-     function sellWeapon() {
+function sellWeapon() {
           if(inventory.length >1 ){
                gold+=15;
                goldText.innerText = gold;
