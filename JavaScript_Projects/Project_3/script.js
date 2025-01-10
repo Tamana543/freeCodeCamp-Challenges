@@ -52,6 +52,11 @@ const locations = [
           "button text": ["Attack", "Dodge", "Run"],
           "button functions": [attack, dodge, goTown], 
           text: "You are fighting a monster.",   
+     },{
+          name: "kill monster",
+          "button text": ["Go to town square", "Go to town square", "Go to town square"],
+          "button functions": [goTown,goTown,goTown], 
+          text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
      }
 ];
 const monsters = [
@@ -59,6 +64,7 @@ const monsters = [
 ]
 let monsterHealthText = document.querySelector("#monsterHealth");
 function update(location){   
+     monsterStats.style.display = "none";
      button1.innerText = location["button text"][0];
      button2.innerText = location["button text"][1];
      button3.innerText = location["button text"][2];
