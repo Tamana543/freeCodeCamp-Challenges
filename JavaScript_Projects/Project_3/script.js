@@ -119,7 +119,7 @@ goFight();
           text.innerText = "You dodge the attack from the " + monsters[fighting].name;
      }
      function lose(){
-
+update(locations[5]);
      }
      function defeatMonster(){
        
@@ -172,6 +172,17 @@ function sellWeapon() {
                 text.innerText = `Don't sell your only weapon!`
 
            }
+     }
+     function restart(){
+          xp = 0;
+          health = 100;
+          gold = 50;
+          currentWeaponIndex = 0;
+          inventory = ["stick"];
+          goldText.innerText = ;
+          healthText.innerHTML=;
+          xpText.innerText = ;
+          goTown()
      }
 // initialize buttons
 button1.onclick = goStore;
