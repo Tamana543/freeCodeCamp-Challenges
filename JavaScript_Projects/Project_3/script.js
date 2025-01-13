@@ -62,6 +62,11 @@ const locations = [
           "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
           "button functions": [restart,restart,restart], 
           text: 'You die. &#x2620;'
+     },{
+          name: "win",
+          "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+          "button functions": [restart,restart,restart], 
+          text: 'You defeat the dragon! YOU WIN THE GAME! &#x1F389;'
      }
 ];
 const monsters = [
@@ -76,7 +81,7 @@ function update(location){
      button1.onclick = location["button functions"][0];
      button2.onclick = location["button functions"][1];
      button3.onclick = location["button functions"][2];
-     text.innerText = location.text; }
+     text.innerHTML = location.text; }
 function goTown(){
      update(locations[0])
          
@@ -107,10 +112,10 @@ function fightDragon(){
      fighting = 2 - monsters[2].name;
 goFight();
      }
-     function attack() {
+function attack() {
           text.innerText = "The "+ monsters[fighting].name + " attacks.";
           text.innerText+= " You attack it with your " + weapons[currentWeaponIndex].name + ".";
-          health -= monsters[fighting].level;
+          health -= getMonsterAttackValue(monsters[fighting].level);
           monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random()* xp )+1;
           healthText.innerText = health;
           monsterHealthText.innerText = monsterHealth;
@@ -125,13 +130,21 @@ winGame()
                }
           }
      }
-     function dodge(){
+ function getMonsterAttackValue(level){
+const hit  = (level* 5) - (Math.floor(Math.random() * xp))
+// console.log(hit);
+return hit;
+ }
+function dodge(){
           text.innerText = "You dodge the attack from the " + monsters[fighting].name;
      }
-     function lose(){
+function lose(){
 update(locations[5]);
      }
-     function defeatMonster(){
+function winGame(){
+          update(locations[6])
+     }
+function defeatMonster(){
        
       gold += Math.floor(monsters[fighting].level * 6.7);
   xp += monsters[fighting].level;
