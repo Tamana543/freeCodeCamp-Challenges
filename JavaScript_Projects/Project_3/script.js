@@ -57,6 +57,11 @@ const locations = [
           "button text": ["Go to town square", "Go to town square", "Go to town square"],
           "button functions": [goTown,goTown,goTown], 
           text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+     },{
+          name: "lose",
+          "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+          "button functions": [restart,restart,restart], 
+          text: 'You die. &#x2620;'
      }
 ];
 const monsters = [
@@ -112,7 +117,12 @@ goFight();
           if(health <= 0 ){
          lose()
           }else if (monsterHealth <= 0 ){
-        defeatMonster();
+               if(fighting === 2){
+winGame()
+               }else {
+
+                    defeatMonster();
+               }
           }
      }
      function dodge(){
@@ -179,9 +189,9 @@ function sellWeapon() {
           gold = 50;
           currentWeaponIndex = 0;
           inventory = ["stick"];
-          goldText.innerText = ;
-          healthText.innerHTML=;
-          xpText.innerText = ;
+          goldText.innerText = gold;
+          healthText.innerText= health;
+          xpText.innerText = xp;
           goTown()
      }
 // initialize buttons
