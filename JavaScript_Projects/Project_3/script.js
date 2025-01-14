@@ -118,6 +118,12 @@ function attack() {
           health -= getMonsterAttackValue(monsters[fighting].level);
           monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random()* xp )+1;
           healthText.innerText = health;
+          if (isMonsterHit()){
+               monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;
+             
+             }else {
+               text.innerText += " You miss."
+             }
           monsterHealthText.innerText = monsterHealth;
           if(health <= 0 ){
          lose()
@@ -133,7 +139,7 @@ winGame()
  function getMonsterAttackValue(level){
 const hit  = (level* 5) - (Math.floor(Math.random() * xp))
 // console.log(hit);
-return hit;
+return hit > 0 ? hit : 0;
  }
 function dodge(){
           text.innerText = "You dodge the attack from the " + monsters[fighting].name;
@@ -207,6 +213,9 @@ function sellWeapon() {
           xpText.innerText = xp;
           goTown()
      }
+function isMonsterHit() {
+    return Math.random()>.2 ? "Yes" : "No" || health < 20
+}
 // initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
