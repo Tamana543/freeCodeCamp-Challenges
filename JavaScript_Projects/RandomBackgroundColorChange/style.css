@@ -1,0 +1,28 @@
+* {
+     box-sizing: border-box;
+     padding: 0px;
+     margin: 0px;
+}
+.flex {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+body{
+     min-height: 100vh;
+     min-width: 100vh;
+     flex-direction: column;
+     background-color: #fff;
+}
+.btn {
+
+     border: 1px solid #000;
+     background-color: #fff;
+     color: #000;
+     margin: 10px 0%;
+     padding: 1%;
+}
+.btn:hover {
+     box-shadow: 1px 1px 6px 1px #000;
+     cursor: pointer;
+}
