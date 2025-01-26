@@ -10,12 +10,15 @@ const darkColorsArr = [
     "#2C3E50",
     "#800020",
   ];
+  const body = document.querySelector("body")
   const dataEl = document.querySelector(".data");
   const btn = document.getElementById("mainBtn");
   function colorFunction(){
- for (let i = 0 ; i < darkColorsArr.length  ; i++){
 
-    
-}
+
+const randomData = Math.floor(darkColorsArr.length * Math.random())
+const color = darkColorsArr[randomData]
+body.style.backgroundColor = color;
+dataEl.textContent = color;
   }
   btn.addEventListener("click",colorFunction)
