@@ -10,7 +10,14 @@ function cleanInputString(str){
 //   To tell the pattern to match each of these characters individually, you need to turn them into a character class. This is done by wrapping the characters you want to match in brackets
 //  Regex can also take specific flags to alter the pattern matching behavior. Flags are added after the closing /. The g flag, which stands for "global", will tell the pattern to continue looking after it has found a match.
     // const regex = /[\+-\s]/;
+    //     console.log("original string: ",str);
     const regex = /[+-\s]/g;
     return str.replace(regex,"")
+  
+}
+function isInvalidInput(str){
+     // Number inputs only allow the e to occur between two digits. To match any number, you can use the character class [0-9]. This will match any digit between 0 and 9.
+// The + modifier in a regex allows you to match a pattern that occurs one or more times. 
 
+     const regex = /[0-9]e[0-9]/i;      
 }
