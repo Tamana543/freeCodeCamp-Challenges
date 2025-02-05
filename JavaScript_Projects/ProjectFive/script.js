@@ -19,5 +19,13 @@ function isInvalidInput(str){
      // Number inputs only allow the e to occur between two digits. To match any number, you can use the character class [0-9]. This will match any digit between 0 and 9.
 // The + modifier in a regex allows you to match a pattern that occurs one or more times. 
 
-     const regex = /[0-9]e[0-9]/i;      
+    //  const regex = /[0-9]+e[0-9]+/i;    
+    const regex = /\d+e\d+/i; //ShartCut For Above const
+    return str.match(regex) // match is a methood for chicking the matchin eles
+
+}
+// console.log(isInvalidInput("1e3"));
+// console.log(entryDropdown.value);
+function addEntry(){
+    const targetId = "#" + entryDropdown.value;
 }
