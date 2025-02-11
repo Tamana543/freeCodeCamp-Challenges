@@ -28,6 +28,21 @@ function isInvalidInput(str){
 // console.log(isInvalidInput("1e3"));
 // console.log(entryDropdown.value);
 function addEntry(){
-   
-    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`)
+   const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`)
+   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1
+   const HTMLString = `
+   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+   <input id="${entryDropdown.value}-${entryNumber}-name" type="text" placeholder="Name" />
+   <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+    <input id="${entryDropdown.value}-${entryNumber}-calories" type="number" min="0" placeholder="Calories" />
+   `;
+   targetInputContainer.insertAdjacentHTML("beforeend", HTMLString) ;
+}
+addEntryButton.addEventListener("click",addEntry)
+
+function getCaloriesFromInputs(list) {
+let calories = 0
+for(const item of list) {
+    const currVal = item.value; 
+}
 }
