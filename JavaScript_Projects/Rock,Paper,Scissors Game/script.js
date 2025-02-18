@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 function getRandomComputerResult() {
     const options = ["Rock", "Paper", "Scissors"];
    const num = Math.floor(options.length * Math.random())
@@ -15,6 +17,6 @@ return true
     return false
 }
 }
-console.log(hasPlayerWonTheRound("Rock","Scissors"));
-console.log(hasPlayerWonTheRound("Scissors", "Rock"));
-console.log(getRandomComputerResult());
+// console.log(hasPlayerWonTheRound("Rock","Scissors"));
+// console.log(hasPlayerWonTheRound("Scissors", "Rock"));
+// console.log(getRandomComputerResult());
