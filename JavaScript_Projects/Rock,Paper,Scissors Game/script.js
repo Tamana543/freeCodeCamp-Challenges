@@ -17,6 +17,21 @@ return true
     return false
 }
 }
+function getRoundResults(userOption) {
+    const computerResult = getRandomComputerResult();
+    if(hasPlayerWonTheRound()) {
+        playerScore++;
+        return `Player wins! ${userOption} beats ${computerResult}`
+    }else if(hasPlayerWonTheRound() === getRandomComputerResult()) {
+        return `It's a tie! Both chose ${userOption}`
+    } if(!hasPlayerWonTheRound()) {
+        return `Computer wins! ${computerResult} beats ${userOption}`
+    }
+   
+  }
+  
+  console.log(getRoundResults("Rock"));
+  console.log("Player Score: ", playerScore, "Computer Score: ", computerScore);
 // console.log(hasPlayerWonTheRound("Rock","Scissors"));
 // console.log(hasPlayerWonTheRound("Scissors", "Rock"));
 // console.log(getRandomComputerResult());
