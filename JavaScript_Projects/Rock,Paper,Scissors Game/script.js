@@ -3,7 +3,9 @@ let computerScore = 0;
 const playerScoreSpanElement = document.getElementById("player-score");
 const computerScoreSpanElement = document.getElementById("computer-score");
 const roundResultsMsg = document.getElementById("results-msg");
-
+const winnerMsgElement = document.getElementById("winner-msg");
+const optionsContainer = document.querySelector(".options-container");
+const resetGameBtn = document.getElementById("reset-game-btn");
 
 showResults("Rock");
 function getRandomComputerResult() {
@@ -37,10 +39,22 @@ function getRoundResults(userOption) {
    
   }
   
-function showResults(userOption) {
-playerScoreSpanElement.innerText = playerScore
-computerScoreSpanElement.innerText = computerScore
-roundResultsMsg.innerText = getRoundResults(userOption)
-
+  function showResults(userOption) {
+    roundResultsMsg.innerText = getRoundResults(userOption)
+    if(playerScore ===  3 || computerScore === 3){
+        resetGameBtn.style.display = "block";
+          optionsContainer.style.display= "none" ;
+      if(playerScore === 3) {
+          winnerMsgElement.innerText = "Player has won the game!"
+          
+        }else if(computerScore === 3) {
+            winnerMsgElement.innerText = "Computer has won the game!" 
+            
+            
+        }
+    }
+        
+    playerScoreSpanElement.innerText = playerScore
+    computerScoreSpanElement.innerText = computerScore
 };
 showResults("Rock")
