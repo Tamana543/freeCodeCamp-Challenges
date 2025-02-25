@@ -70,3 +70,9 @@ src: "https://cdn.freecodecamp.org/curriculum/js-music-player/still-learning.mp3
     src: "https://cdn.freecodecamp.org/curriculum/js-music-player/chasing-that-feeling.mp3",
   },
 ];
+const audio = new Audio();
+let userData = {
+    "songs" : [...allSongs],
+    "currentSong" : null ,
+    "songCurrentTime" : 0
+};
