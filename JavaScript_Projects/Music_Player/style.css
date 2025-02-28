@@ -180,7 +180,7 @@
   }
   
   #playlist-songs {
-    width: 430px;
+    width:90%;
     height: 100%;
     background-color: var(--foreground-color);
     display: flex;
