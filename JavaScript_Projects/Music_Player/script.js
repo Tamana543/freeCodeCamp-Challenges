@@ -87,6 +87,7 @@ let userData = {
 };
 
 const renderSongs = (array) => {
+  // console.log(array);
   const songsHTML = array.map((song)=> {
       return `
       <li id="song-${song.id}" class="playlist-song">
@@ -108,8 +109,26 @@ const renderSongs = (array) => {
 };
 const sortSongs = ()=>{
   userData?.songs.sort((a,b)=>{
-    
-  })
-}
+    if(a.title < b.title) return -1
+    a.title > b.title?  1 : 0
 
-renderSongs(userData?.songs)
+  })
+  return userData?.songs
+}
+const playSong = (id)=> {
+  const song = userData?.songs.find((song)=> song.id===id)
+  audio.src = song.src;
+  audio.title = song.title
+  if(!userData?.currentSong || userData?.currentSong.id !== song.id) {
+    audio.currentTime = 0
+  }else{
+    audio.currentTime = userData?.songCurrentTime
+  }
+ userData.currentSong=song
+ playButton.classList.add("playing"
+ )
+ audio.play()
+
+}
+playButton.addEventListener("click",()=>{})
+renderSongs(sortSongs());
