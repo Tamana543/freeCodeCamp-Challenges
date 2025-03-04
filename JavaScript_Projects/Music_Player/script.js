@@ -155,5 +155,11 @@ const sortSongs = () => {
 
   return userData?.songs;
 };
-
-renderSongs(sortSongs());
+const getCurrentSongIndex = ()=>{
+  return userData?.songs.indexOf(userData?.currentSong)
+}
+const playNextSong = ()=>{
+  
+}
+pauseButton.addEventListener("click",pauseSong)
+  renderSongs(sortSongs());
