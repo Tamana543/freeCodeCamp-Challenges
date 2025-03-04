@@ -134,9 +134,14 @@ const playNextSong = ()=>{
     playSong(nextSong.id)
   }
 }
-const playPreviousSong = ()=>{
-  
-}
+// Bugg
+// const playPreviousSong = ()=>{
+//   if(userData?.currentSong === null){
+//     return 
+//   }else {
+//   currentSong = getCurrentSongIndex()
+//   }
+// }
 const renderSongs = (array) => {
   const songsHTML = array
     .map((song)=> {
