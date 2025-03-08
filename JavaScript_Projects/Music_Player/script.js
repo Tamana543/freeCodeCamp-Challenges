@@ -134,14 +134,15 @@ const playNextSong = ()=>{
     playSong(nextSong.id)
   }
 }
-// Bugg
-// const playPreviousSong = ()=>{
-//   if(userData?.currentSong === null){
-//     return 
-//   }else {
-//   currentSong = getCurrentSongIndex()
-//   }
-// }
+const playPreviousSong = ()=>{
+  if(userData?.currentSong === null){
+    return 
+  }else {
+    const currentSongIndex= getCurrentSongIndex();
+    const previousSong = userData?.songs[currentSongIndex - 1];
+    playSong(previousSong.id) 
+  }
+}
 const renderSongs = (array) => {
   const songsHTML = array
     .map((song)=> {
@@ -175,4 +176,5 @@ playButton.addEventListener("click", () => {
 
 pauseButton.addEventListener("click",pauseSong)
 nextButton.addEventListener("click",playNextSong)
-  renderSongs(sortSongs());
+previousButton.addEventListener("click",playPreviousSong)
+renderSongs(sortSongs());
