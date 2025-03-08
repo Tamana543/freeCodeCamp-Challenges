@@ -97,7 +97,7 @@ const playSong = (id) => {
   }
   userData.currentSong = song;
   playButton.classList.add("playing");
-
+  highlightCurrentSong()
   audio.play();
 };
 
@@ -164,6 +164,16 @@ const renderSongs = (array) => {
 
   playlistSongs.innerHTML = songsHTML;
 };
+const highlightCurrentSong = ()=>{
+  const playlistSongElements =document.querySelectorAll(".playlist-song") ;
+  const songToHighlight = document.getElementById(`song-${userData?.currentSong?.id}`);
+  playlistSongElements.forEach((songEl)=>{
+    songEl.removeAttribute("aria-current")
+  });
+  if(songToHighlight){
+songToHighlight.setAttribute("aria-current","true");
+  }
+}
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -172,8 +182,6 @@ playButton.addEventListener("click", () => {
     playSong(userData?.currentSong.id);
   }
 });
-
-
 pauseButton.addEventListener("click",pauseSong)
 nextButton.addEventListener("click",playNextSong)
 previousButton.addEventListener("click",playPreviousSong)
