@@ -174,7 +174,16 @@ const highlightCurrentSong = ()=>{
 songToHighlight.setAttribute("aria-current","true");
   }
 }
+const setPlayerDisplay =()=>{
+  const playingSong = document.getElementById("player-song-title");
+  const songArtist = document.getElementById("player-song-artist");
 
+  const currentTitle = userData?.currentSong?.title;
+  const currentArtist = userData?.currentSong?.artist;
+// here 
+  currentTitle ? playingSong.textContent = currentTitle : "";
+  currentArtist ? songArtist.textContent = currentArtist : "";
+} ;
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
     playSong(userData?.songs[0].id);
