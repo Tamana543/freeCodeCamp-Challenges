@@ -185,7 +185,9 @@ playingSong.textContent = currentTitle ? currentTitle :"";
 songArtist.textContent = currentArtist ? currentArtist : ""
 
 } ;
-const setPlayButtonAccessibleText = ()=>{}
+const setPlayButtonAccessibleText = ()=>{
+  const song  = userData?.currentSong || userData?.songs[0]
+}
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
     playSong(userData?.songs[0].id);
