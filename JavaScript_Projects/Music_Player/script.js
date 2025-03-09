@@ -98,6 +98,7 @@ const playSong = (id) => {
   userData.currentSong = song;
   playButton.classList.add("playing");
   highlightCurrentSong()
+  setPlayerDisplay()
   audio.play();
 };
 
@@ -180,10 +181,11 @@ const setPlayerDisplay =()=>{
 
   const currentTitle = userData?.currentSong?.title;
   const currentArtist = userData?.currentSong?.artist;
-// here 
-  currentTitle ? playingSong.textContent = currentTitle : "";
-  currentArtist ? songArtist.textContent = currentArtist : "";
+playingSong.textContent = currentTitle ? currentTitle :"";
+songArtist.textContent = currentArtist ? currentArtist : ""
+
 } ;
+const setPlayButtonAccessibleText = ()=>{}
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
     playSong(userData?.songs[0].id);
