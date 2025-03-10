@@ -100,6 +100,7 @@ const playSong = (id) => {
   highlightCurrentSong()
   setPlayerDisplay()
   audio.play();
+  setPlayButtonAccessibleText()
 };
 
 const pauseSong = () => {
@@ -186,7 +187,8 @@ songArtist.textContent = currentArtist ? currentArtist : ""
 
 } ;
 const setPlayButtonAccessibleText = ()=>{
-  const song  = userData?.currentSong || userData?.songs[0]
+  const song  = userData?.currentSong || userData?.songs[0];
+  playButton.setAttribute( "aria-label", song?.title ? `Play ${song.title}`:"Play");
 }
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
