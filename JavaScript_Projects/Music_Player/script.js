@@ -176,6 +176,17 @@ const highlightCurrentSong = ()=>{
 songToHighlight.setAttribute("aria-current","true");
   }
 }
+const shuffle = ()=> {
+  userData?.songs.sort(()=>{
+    return Math.random() - 0.5
+  })
+  userData.currentSong = null
+userData.songCurrentTime = 0
+renderSongs(userData?.songs)
+pauseSong()
+setPlayerDisplay()
+setPlayButtonAccessibleText()
+}
 const setPlayerDisplay =()=>{
   const playingSong = document.getElementById("player-song-title");
   const songArtist = document.getElementById("player-song-artist");
@@ -190,6 +201,9 @@ const setPlayButtonAccessibleText = ()=>{
   const song  = userData?.currentSong || userData?.songs[0];
   playButton.setAttribute( "aria-label", song?.title ? `Play ${song.title}`:"Play");
 }
+const deleteSong=(id)=>{
+
+}
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
     playSong(userData?.songs[0].id);
@@ -200,4 +214,5 @@ playButton.addEventListener("click", () => {
 pauseButton.addEventListener("click",pauseSong)
 nextButton.addEventListener("click",playNextSong)
 previousButton.addEventListener("click",playPreviousSong)
+shuffleButton.addEventListener("click",shuffle)
 renderSongs(sortSongs());
