@@ -202,7 +202,13 @@ const setPlayButtonAccessibleText = ()=>{
   playButton.setAttribute( "aria-label", song?.title ? `Play ${song.title}`:"Play");
 }
 const deleteSong=(id)=>{
+  if(userData?.currentSong?.id === id) {
 
+  }
+  userData.songs = userData?.songs.filter(song => song.id !== id)
+  renderSongs(userData?.songs)
+  highlightCurrentSong()
+  setPlayButtonAccessibleText()
 }
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
