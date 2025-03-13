@@ -109,6 +109,13 @@ const pauseSong = () => {
   playButton.classList.remove("playing");
   audio.pause();
 };
+audio.addEventListener("ended", () => {
+  
+  const currentSongIndex = getCurrentSongIndex()
+if(userData.songs.length -1 > currentSongIndex) {
+// const nextSongExists=  currentSongIndex
+  }
+});
 const sortSongs = () => {
   userData?.songs.sort((a,b) => {
     if (a.title < b.title) {
