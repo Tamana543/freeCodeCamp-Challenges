@@ -12,14 +12,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     
+    background-color: #b156fe;
 }
 .container {
     flex-direction: column;
    
-    width: 80vh;
-    height: 80vh;
-    background-color: #b156fe;
-    box-shadow: 0px 1px 6px 3px #b156fe;
+    width: 100vh;
+    height: 55vh;
+    box-shadow: 0px 1px 6px 3px #fff;
     gap: 5%;
 }
 .heading_me {
@@ -30,4 +30,48 @@ body {
     letter-spacing: 1px;
     text-transform:uppercase ;
     text-align: left;
+}
+.main_heading {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.box {
+    width: 70%;
+    height: 40%;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 50px;
+}
+.form {
+    width: 80%;
+    height: 60%;
+    gap: 10%;
+}
+
+input {
+    border: none;
+    border-bottom: 4px solid #b156fe;
+    margin-top: 5%;
+    font-size: 1.5rem;
+    /* padding: 1% 4%; */
+    color: #6001ad;
+}
+input:focus {
+    outline: none;
+    
+}
+button {
+    padding: 3% 10%;
+    padding: 2% 9%;
+    font-size: 1.8rem;
+    border: none;
+    background-color: #b156fe;
+    color: #fff;
+border-radius: 10px;
+text-transform: capitalize;
+}
+button:hover {
+    cursor: pointer;
+border: 1px solid #b156fe;
 }
