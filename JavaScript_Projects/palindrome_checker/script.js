@@ -6,7 +6,8 @@ const resultBoc = document.getElementById("result")
 function chickpointEn(event){
      event.preventDefault()
      // const data = String(inputEle)
-     if(inputEle.length === 0 ) {
+     console.log(inputEle.value);
+     if(inputEle.value == " ") {
           alert("Please input a value")
      }else{
           console.log("Hereee");
