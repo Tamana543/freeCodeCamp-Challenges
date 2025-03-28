@@ -22,15 +22,7 @@ body {
     box-shadow: 0px 1px 6px 3px #fff;
     gap: 5%;
 }
-/* .heading_me {
-    color: #fff;
-   
-    padding: 1%;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    text-transform:uppercase ;
-    text-align: left;
-} */
+
 .heading_me {
     /* font-family: 'Bebas Neue', cursive; */
     font-size: 3em;
@@ -65,7 +57,8 @@ body {
 .form {
     width: 80%;
     height: 60%;
-    gap: 10%;
+    padding: 2%;
+    gap: 2%;
 }
 
 input {
@@ -81,8 +74,8 @@ input:focus {
     
 }
 button {
-    padding: 3% 10%;
-    padding: 2% 9%;
+    /* padding: 3% 10%; */
+    padding: 2% 5%;
     font-size: 1.8rem;
     border: none;
     background-color: #b156fe;
