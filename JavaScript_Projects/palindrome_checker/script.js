@@ -1,12 +1,12 @@
 const checkBtn = document.getElementById("check-btn")
 const inputEle = document.getElementById("text-input")
-const resultBoc = document.getElementById("result")
+const result = document.getElementById("result")
 const details = document.getElementsByClassName("details");
 // console.log(checkBtn);
 
 function chickpointEn(event){
      event.preventDefault()
-     let detailsBox = details.textContent;
+     let detailsBox = result.textContent;
      // const data = String(inputEle)
      // console.log(inputEle.value);
 
