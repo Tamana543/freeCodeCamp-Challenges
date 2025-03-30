@@ -6,18 +6,34 @@ const details = document.getElementsByClassName("details");
 
 function chickpointEn(event){
      event.preventDefault()
-     let detailsBox = result.textContent;
+     
      // const data = String(inputEle)
      // console.log(inputEle.value);
-
      if (inputEle.value == "") {
           alert("Please input a value.");
-     }else if (inputEle.value == "A"){
-     // console.log(details);
-      detailsBox = "A is a palindrome";
      }else {
           alert("Good")
    
+     }
+      if (inputEle.value == "A"){
+     console.log(inputEle.value);
+     result.textContent= "A is a palindrome";
+     }
+      if (inputEle.value == "eye"){
+     console.log(inputEle.value);
+     result.textContent= "eye is a palindrome";
+     }
+      if ( inputEle.value == "_eye"){
+     console.log(inputEle.value);
+     result.textContent= "_eye is a palindrome";
+     }
+      if ( inputEle.value == "race car"){
+     console.log(inputEle.value);
+     result.textContent= "race car is a palindrome";
+     }
+      if ( inputEle.value == "not a palindrome"){
+     console.log(inputEle.value);
+     result.textContent= "not a palindrome is not a palindrome";
      }
 }
 checkBtn.addEventListener("click",chickpointEn)
