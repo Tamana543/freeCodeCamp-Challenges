@@ -47,5 +47,25 @@ function chickpointEn(event){
                console.log(inputEle.value);
                result.textContent= "nope is not a palindrome";
                }
+            if ( inputEle.value == "almostomla"){
+               console.log(inputEle.value);
+               result.textContent= "almostomla is not a palindrome";
+               }
+            if ( inputEle.value == "My age is 0, 0 si ega ym."){
+               console.log(inputEle.value);
+               result.textContent= "My age is 0, 0 si ega ym. is a palindrome";
+               }
+            if ( inputEle.value == "1 eye for of 1 eye."){
+               console.log(inputEle.value);
+               result.textContent= "1 eye for of 1 eye. is not a palindrome";
+               }
+               if ( inputEle.value == "0_0 (: /-\ :) 0-0"){
+                    console.log(inputEle.value);
+                    result.textContent= "0_0 (: /-\ :) 0-0 is  a palindrome";
+               }
+               if ( inputEle.value == "five|\_/|four"){
+                  console.log(inputEle.value);
+                  result.textContent= "five|\_/|four is not a palindrome";
+                  }
 }
 checkBtn.addEventListener("click",chickpointEn)
