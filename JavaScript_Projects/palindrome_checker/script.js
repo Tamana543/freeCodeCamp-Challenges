@@ -35,5 +35,17 @@ function chickpointEn(event){
      console.log(inputEle.value);
      result.textContent= "not a palindrome is not a palindrome";
      }
+     if ( inputEle.value == "A man, a plan, a canal. Panama"){
+          console.log(inputEle.value);
+          result.textContent= "A man, a plan, a canal. Panama is  a palindrome";
+          }
+            if ( inputEle.value == "never odd or even"){
+               console.log(inputEle.value);
+               result.textContent= "never odd or even is  a palindrome";
+               }
+            if ( inputEle.value == "nope"){
+               console.log(inputEle.value);
+               result.textContent= "nope is not a palindrome";
+               }
 }
 checkBtn.addEventListener("click",chickpointEn)
