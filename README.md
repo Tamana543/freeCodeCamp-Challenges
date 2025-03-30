@@ -24,10 +24,14 @@
 
 #### Project Two_Gradded Application 
 
-#### Project Three_Montar Fight Game 
+#### Project Three_Monstar Fight Game 
 
 #### Project Four_RandomBackgroundColorChange
 
 #### Project Five_CalorieCounter
 
 #### Project Six_Rock,Paper,Scissors Game 
+
+#### Project seven My music Player 
+
+#### Project Eight palindrome_checker
