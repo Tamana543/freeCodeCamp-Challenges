@@ -37,3 +37,28 @@ footer {
   font-size: 1.3rem;
   margin: 1.2rem 0;
 }
+.options-label {
+     font-size: 1.2rem;
+   }
+   
+   .cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .player-card {
+     background-color: var(--light-grey);
+     padding: 1.3rem;
+     margin: 1.2rem;
+     width: 300px;
+     border-radius: 15px;
+   }
+   
+   @media (max-width: 768px) {
+     .team-stats {
+       flex-direction: column;
+     }
+   }
+   
