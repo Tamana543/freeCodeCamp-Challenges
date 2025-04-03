@@ -184,7 +184,26 @@ playerCards.innerHTML +=  arr.map(({name,position,number,isCaptain,nickname})=>{
 return `
 <div class="player-card">
 <h2>${isCaptain ? "(Captain)" : ""} ${name}</h2>
+<p> Position: ${position}</p>
+<p> Number: ${number}</p>
+<p>Nickname: ${nickname ? nickname : "N/A"}</p>
 </div>
 `;
-})
+}).join("")
 }
+playersDropdownList.addEventListener("change",(e)=>{
+// console.log(e.target.value);
+playerCards.innerHTML = "";
+switch (e.target.value) {
+  case "nickname":
+    setPlayerCards(players.filter((player)=> player.nickname !== null ))
+    break;
+
+  case "forward":
+    setPlayerCards(players.filter((player)=> player.position == "forward"))
+    break;
+  case "midfielder":
+    setPlayerCards(players.filter((player)=> player.position == "midfielder"))
+    break;
+}
+})
