@@ -180,7 +180,11 @@ worldCupYear.textContent= year;
 headCoach.textContent = coachName;
 
 const setPlayerCards = (arr = players)=>{
-playerCards.innerHTML +=  arr.map(()=>{
-
+playerCards.innerHTML +=  arr.map(({name,position,number,isCaptain,nickname})=>{
+return `
+<div class="player-card">
+<h2>${isCaptain ? "(Captain)" : ""} ${name}</h2>
+</div>
+`;
 })
 }
