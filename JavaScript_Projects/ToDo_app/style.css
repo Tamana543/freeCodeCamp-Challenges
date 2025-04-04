@@ -2,8 +2,8 @@
      --white: #fff;
      --light-grey: #f5f6f7;
      --dark-grey: #0a0a23;
-     --yellow: #f1be32;
-     --golden-yellow: #feac32;
+     --pink: #df29f0;
+     --dark-pink: #df29f04f;
    }
    
    *,
@@ -15,7 +15,7 @@
    }
    
    body {
-     background-color: var(--dark-grey);
+     background-color: #f4f4f4;
    }
    
    main {
@@ -34,7 +34,7 @@
      background-color: var(--white);
      width: 300px;
      height: 350px;
-     border: 5px solid var(--yellow);
+     border: 5px solid var(--pink);
      border-radius: 8px;
      padding: 15px;
      position: relative;
@@ -47,15 +47,16 @@
      cursor: pointer;
      width: 100px;
      margin: 10px;
-     color: var(--dark-grey);
-     background-color: var(--golden-yellow);
-     background-image: linear-gradient(#fecc4c, #ffac33);
-     border-color: var(--golden-yellow);
+     color: var(--white);
+     background-color: var(--dark-pink);
+     background-image: linear-gradient(#df29f0, #df29f04f);
+     border-color: var(--dark-pink);
      border-width: 3px;
+     padding: 1%;
    }
    
 .btn:hover {
-     background-image: linear-gradient(#ffcc4c, #f89808);
+     background-image: linear-gradient(#df29f04f, #df29f0);
    }
    
    .large-btn {
