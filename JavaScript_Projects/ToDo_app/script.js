@@ -26,3 +26,13 @@ discardBtn.addEventListener("click",()=>{
      confirmCloseDialog.close()
      taskForm.classList.toggle("hidden")
 })
+taskForm.addEventListener("submit",(event)=>{
+     event.preventDefault();
+     const dataArrIndex =taskData.findIndex((item)=>(item)=>item.id === currentTask.id)  ;
+     const taskObj = {
+          id: titleInput.value.toLowerCase()
+          
+     } ;
+     console.log(taskObj);
+     
+})
