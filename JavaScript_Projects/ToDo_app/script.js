@@ -12,19 +12,33 @@ const dateInput = document.getElementById("date-input");
 
 const taskData = [];
 let currentTask = {};
+const reset = ()=>{
+     titleInput.value= "";
+     dateInput.value= "";
+     descriptionInput.value= "";
+     taskForm.classList.toggle("hidden");
+     currentTask ={};
+}
 openTaskFormBtn.addEventListener("click",()=>{
      taskForm.classList.toggle("hidden")
 
 })
 closeTaskFormBtn.addEventListener("click",()=>{
-     confirmCloseDialog.showModal()// search me 
+     // confirmCloseDialog.showModal()// search me 
+     const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+     if(formInputsContainValues) {
+          confirmCloseDialog.showModal()
+     }else {
+          reset()
+     }
+   
 })
 cancelBtn.addEventListener("click", ()=>{
      confirmCloseDialog.close()
 })
 discardBtn.addEventListener("click",()=>{
      confirmCloseDialog.close()
-     taskForm.classList.toggle("hidden")
+     reset()
 })
 taskForm.addEventListener("submit",(event)=>{
      event.preventDefault();
@@ -44,7 +58,10 @@ tasksContainer.innerHTML += `
 <div class="task" id="${id}">
 <p><strong>Title:</strong> ${title}</p>
 <p><strong>Date:</strong> ${date}</p>
+<p><strong>Description:</strong> ${description}</p>
+<button type="button" class="btn">Edit</button>
+<button type="button" class="btn">Delete</button>
 </div>
-`
-    }) 
+`});
+reset() // for any bug chick here 
 })
