@@ -30,9 +30,21 @@ taskForm.addEventListener("submit",(event)=>{
      event.preventDefault();
      const dataArrIndex =taskData.findIndex((item)=>(item)=>item.id === currentTask.id)  ;
      const taskObj = {
-          id: `${titleInput.value.toLowerCase().split(" ").join("-")}`
+          id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
+          title: titleInput.value,
+          date: dateInput.value,
+          description: descriptionInput.value,
           
      } ;
-     console.log(taskObj);
-     
+    if(dataArrIndex === -1) {
+     taskData.unshift(taskObj)
+    }
+    taskData.forEach(({id, title, date, description})=>{
+tasksContainer.innerHTML += `
+<div class="task" id="${id}">
+<p><strong>Title:</strong> ${title}</p>
+<p><strong>Date:</strong> ${date}</p>
+</div>
+`
+    }) 
 })
