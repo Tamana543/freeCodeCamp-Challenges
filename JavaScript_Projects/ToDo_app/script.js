@@ -12,13 +12,21 @@ const dateInput = document.getElementById("date-input");
 
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
+function removeSpecialChars(data){
+     let regex = data.replace(/["'_]/g,"");
+     return regex
+}
 const addOrUpdateTask = ()=>{
+     if(!titleInput.value.trim()){
+          alert("Please provide a title")
+          return 
+     }
      const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
      const taskObj = {
-          id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
-          title: titleInput.value,
+          id: `${removeSpecialChars(titleInput.value).toLowerCase().split(" ").join("-")}-${Date.now()}`,
+          title: removeSpecialChars(titleInput.value),
           date: dateInput.value,
-          description: descriptionInput.value,
+          description: removeSpecialChars(descriptionInput.value),
           
      } ;
      if(dataArrIndex === -1) {
@@ -52,8 +60,9 @@ localStorage.setItem("data",JSON.stringify(taskData))
 const editTask=(buttonEl)=>{
  const dataArrIndex = taskData.findIndex((item)=> item.id === buttonEl.parentElement.id);
 currentTask = taskData[dataArrIndex]
-titleInput.value = currentTask.titleInput;
-dateInput.value = currentTask.dateInput;
+// console.log(taskData);
+titleInput.value = currentTask.title;
+dateInput.value = currentTask.date;
 descriptionInput.value = currentTask.description;
 addOrUpdateTaskBtn.innerText = "Update Task";
 taskForm.classList.toggle("hidden")
