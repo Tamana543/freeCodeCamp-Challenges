@@ -23,6 +23,8 @@ const addOrUpdateTask = ()=>{
      } ;
      if(dataArrIndex === -1) {
           taskData.unshift(taskObj)
+         }else {
+          taskData[dataArrIndex] = taskObj;
          }
          updateTaskContainer()
          reset() // for any bug chick here 
@@ -51,7 +53,8 @@ currentTask = taskData[dataArrIndex]
 titleInput.value = currentTask.titleInput;
 dateInput.value = currentTask.dateInput;
 descriptionInput.value = currentTask.description;
-addOrUpdateTaskBtn.innerText = "Update Task"
+addOrUpdateTaskBtn.innerText = "Update Task";
+taskForm.classList.toggle("hidden")
 }
 const reset = ()=>{
      titleInput.value= "";
@@ -66,6 +69,7 @@ openTaskFormBtn.addEventListener("click",()=>{
 })
 closeTaskFormBtn.addEventListener("click",()=>{
      // confirmCloseDialog.showModal()// search me 
+     const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
      const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
      if(formInputsContainValues) {
           confirmCloseDialog.showModal()
