@@ -10,7 +10,7 @@ const discardBtn = document.getElementById("discard-btn");
 const descriptionInput = document.getElementById("description-input");
 const dateInput = document.getElementById("date-input");
 
-const taskData = [];
+const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 const addOrUpdateTask = ()=>{
      const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
@@ -26,6 +26,7 @@ const addOrUpdateTask = ()=>{
          }else {
           taskData[dataArrIndex] = taskObj;
          }
+         localStorage.setItem("data",JSON.stringify(taskData))
          updateTaskContainer()
          reset() // for any bug chick here 
 }
@@ -46,6 +47,7 @@ const deleteTask=(buttonEl)=>{
 const dataArrIndex = taskData.findIndex((item)=> item.id === buttonEl.parentElement.id);
 buttonEl.parentElement.remove()
 taskData.splice(dataArrIndex,1)
+localStorage.setItem("data",JSON.stringify(taskData))
 }
 const editTask=(buttonEl)=>{
  const dataArrIndex = taskData.findIndex((item)=> item.id === buttonEl.parentElement.id);
@@ -62,6 +64,10 @@ const reset = ()=>{
      descriptionInput.value= "";
      taskForm.classList.toggle("hidden");
      currentTask ={};
+     addOrUpdateTaskBtn.innerText = "Add Task"
+}
+if(taskData.length) {
+     updateTaskContainer()
 }
 openTaskFormBtn.addEventListener("click",()=>{
      taskForm.classList.toggle("hidden")
@@ -71,7 +77,7 @@ closeTaskFormBtn.addEventListener("click",()=>{
      // confirmCloseDialog.showModal()// search me 
      const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
      const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
-     if(formInputsContainValues) {
+     if(formInputsContainValues && formInputValuesUpdated) {
           confirmCloseDialog.showModal()
      }else {
           reset()
