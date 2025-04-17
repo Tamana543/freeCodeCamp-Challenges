@@ -3,7 +3,10 @@ const convertBtn = document.getElementById("convert-btn");
 const  result = document.getElementById("result");
 
 function checkUserInput(){
-     console.log(numberInput.value);
+     // console.log(numberInput.value);
+     if (!numberInput.value ||parseInt( numberInput.value)) {
+          
+     }
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
