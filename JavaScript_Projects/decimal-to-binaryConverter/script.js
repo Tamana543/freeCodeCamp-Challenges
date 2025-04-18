@@ -12,7 +12,14 @@ function checkUserInput(){
      numberInput.value = ""
 }
 function decimalToBinary(input){
-     return "01110110";
+    const inputs = [];
+    const quotients = [];
+    const remainders = [];
+    while (input>0) {
+         const quotient = Math.floor(input/2);
+         const remainder = input % 2
+         input = quotient;
+    }
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
