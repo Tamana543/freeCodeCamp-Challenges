@@ -4,9 +4,15 @@ const  result = document.getElementById("result");
 
 function checkUserInput(){
      // console.log(numberInput.value);
-     if (!numberInput.value ||parseInt( numberInput.value)) {
-          
+     if (!numberInput.value ||isNaN(parseInt( numberInput.value)) ||parseInt( numberInput.value) < 0 ) {
+          alert("Please provide a decimal number greater than or equal to 0")
+     return;
      }
+     decimalToBinary(parseInt(numberInput.value))
+     numberInput.value = ""
+}
+function decimalToBinary(input){
+     return "01110110";
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
