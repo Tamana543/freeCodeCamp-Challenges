@@ -8,7 +8,7 @@ function checkUserInput(){
           alert("Please provide a decimal number greater than or equal to 0")
      return;
      }
-     decimalToBinary(parseInt(numberInput.value))
+     decimalToBinarySub(parseInt(numberInput.value))
      numberInput.value = ""
 }
 function decimalToBinary(input){
@@ -29,6 +29,19 @@ function decimalToBinary(input){
          input = quotient;
     }
 result.innerText = remainders.reverse().join("")
+}
+// Or other way, you can do the above function 
+function decimalToBinarySub(input){
+     let binary = "";
+     if (input=== 0 ) {
+      binary = "0"    
+     }
+     while (input > 0) {
+          // input = 0
+          input= Math.floor(input/2)
+          binary = (input % 2) + binary;
+     }
+     result.innerText = binary;
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
