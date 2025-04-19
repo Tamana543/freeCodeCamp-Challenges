@@ -9,7 +9,8 @@ function checkUserInput(){
           alert("Please provide a decimal number greater than or equal to 0")
      return;
      }
-     decimalToBinarySub(parseInt(numberInput.value))
+     
+     result.textContent = decimalToBinaryThirdway(parseInt(numberInput.value))
      numberInput.value = ""
 }
 function decimalToBinary(input){
@@ -32,7 +33,8 @@ function decimalToBinary(input){
 result.innerText = remainders.reverse().join("")
 }
 // Or other way, you can do the above function 
-function decimalToBinarySub(input){
+ 
+function decimalToBinarySecondway(input){
      let binary = "";
      if (input=== 0 ) {
       binary = "0"    
@@ -43,6 +45,14 @@ function decimalToBinarySub(input){
           binary = (input % 2) + binary;
      }
      result.innerText = binary;
+}
+// Or other way, you can do the above function
+function decimalToBinaryThirdway(input){
+     if (input===0) {
+          return ""
+     }else {
+          return decimalToBinary(Math.floor(input/2))+ (input % 2);
+     }
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
