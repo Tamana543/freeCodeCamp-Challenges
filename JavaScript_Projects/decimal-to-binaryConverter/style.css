@@ -38,7 +38,7 @@
      font-weight: 500;
      color: #050121;
    }
-   input {
+   input,textarea {
      position: relative;
      font-size: 1.1em;
      width: 100%;
@@ -48,7 +48,12 @@
      color: #43405c;
      outline: none;
    }
-   input:focus {
+   textarea{
+    padding: 0em  0.5em !important;
+    height: 50%;
+    text-align: center;
+   }
+   input:focus,textarea:focus {
      border-color: #0075ff;
    }
    #animation-container {
