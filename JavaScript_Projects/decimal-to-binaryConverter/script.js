@@ -9,7 +9,10 @@ function checkUserInput(){
           alert("Please provide a decimal number greater than or equal to 0")
      return;
      }
-     
+     if (parseInt(numberInput.value) ===5) {
+          showAnimation()
+          return
+     }
      result.textContent = decimalToBinaryThirdway(parseInt(numberInput.value))
      numberInput.value = ""
 }
@@ -48,12 +51,14 @@ function decimalToBinarySecondway(input){
 }
 // Or other way, you can do the above function
 function decimalToBinaryThirdway(input){
-     if (input===0) {
-          return ""
+     if (input===0 || input===1) {
+          return String(input)
      }else {
-          return decimalToBinary(Math.floor(input/2))+ (input % 2);
+          
+          return decimalToBinaryThirdway(Math.floor(input/2))+ (input % 2);
      }
 }
+function showAnimation(){}
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
 if(e.key === "Enter") {
