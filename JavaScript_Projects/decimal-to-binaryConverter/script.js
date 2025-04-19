@@ -2,6 +2,7 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const  result = document.getElementById("bin-inp");
 
+
 function checkUserInput(){
      // console.log(numberInput.value);
      if (!numberInput.value ||isNaN(parseInt( numberInput.value)) ||parseInt( numberInput.value) < 0 ) {
