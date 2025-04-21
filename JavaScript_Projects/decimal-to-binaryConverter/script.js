@@ -20,7 +20,7 @@ const animationData = [
      {
           inputVal : 1,
           addElDelay: 2000,
-          msg:"decimalToBinary(1) returns '1' (base case) and gives that value to the stack below. Then it pops off the stack.",
+          msg:`${decimalToBinaryThirdway(1)} returns '1' (base case) and gives that value to the stack below. Then it pops off the stack.`,
           showMsgDelay : 5000,
           removeElDelay : 10000,
      },
@@ -87,10 +87,22 @@ function showAnimation(){
    result.innerText = "Call Stack Animation"
    animationData.forEach((obj)=>{
   setTimeout(() => {
-     animationContainer.innerHTML += `<p id="${obj.inputVal} class="animation-frame">decimalToBinary(${obj.inputVal})</p>`
+     // A Bug Fex it
+     animationContainer.innerHTML += `<p id="${obj.inputVal} class="animation-frame">${decimalToBinaryThirdway(obj.inputVal)}</p>`
   }, obj.addElDelay);
+  setTimeout(() => {
+     document.getElementById(obj.inputVal).textContent = obj.msg;
+   }, obj.showMsgDelay);
+
+   setTimeout(() => {
+     document.getElementById(obj.inputVal).remove();
+   }, obj.removeElDelay);
    })
+   setTimeout(() => {
+     result.textContent = decimalToBinaryThirdway(5)
+   }, 20000);
 }
+
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
 if(e.key === "Enter") {
