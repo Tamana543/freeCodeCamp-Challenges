@@ -4,16 +4,17 @@ const  result = document.getElementById("bin-inp");
 
 
 function checkUserInput(){
+     const inputInt = parseInt(numberInput.value)
      // console.log(numberInput.value);
-     if (!numberInput.value ||isNaN(parseInt( numberInput.value)) ||parseInt( numberInput.value) < 0 ) {
+     if (!numberInput.value ||isNaN(inputInt) || inputInt < 0 ) {
           alert("Please provide a decimal number greater than or equal to 0")
      return;
      }
-     if (parseInt(numberInput.value) ===5) {
+     if (inputInt ===5) {
           showAnimation()
           return
      }
-     result.textContent = decimalToBinaryThirdway(parseInt(numberInput.value))
+     result.textContent = decimalToBinaryThirdway(inputInt)
      numberInput.value = ""
 }
 function decimalToBinary(input){
@@ -58,7 +59,20 @@ function decimalToBinaryThirdway(input){
           return decimalToBinaryThirdway(Math.floor(input/2))+ (input % 2);
      }
 }
-function showAnimation(){}
+function showAnimation(){
+     setTimeout(() => {
+          console.log("coded");
+        }, 500);
+        setTimeout(() => {
+          console.log("By");
+        }, 1000);
+        setTimeout(() => {
+          console.log("Tamana");
+        }, 1500);
+     // console.log("free");
+     // console.log("Code");
+     // console.log("Camp");
+}
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
 if(e.key === "Enter") {
