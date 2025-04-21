@@ -2,7 +2,22 @@ const numberInput = document.getElementById("number-input");
 const convertBtn = document.getElementById("convert-btn");
 const  result = document.getElementById("bin-inp");
 
+const animationData = [
+     {
+          inputVal : 5,
+          addElDelay : 1000,
+     },
+     {
+          inputVal : 2,
+          addElDelay: 1500
+     } ,
+     {
+          inputVal : 1,
+          addElDelay: 2000
+     },
 
+];
+const animationContainer =document.getElementById("animation-container");
 function checkUserInput(){
      const inputInt = parseInt(numberInput.value)
      // console.log(numberInput.value);
@@ -60,18 +75,7 @@ function decimalToBinaryThirdway(input){
      }
 }
 function showAnimation(){
-     setTimeout(() => {
-          console.log("coded");
-        }, 500);
-        setTimeout(() => {
-          console.log("By");
-        }, 1000);
-        setTimeout(() => {
-          console.log("Tamana");
-        }, 1500);
-     // console.log("free");
-     // console.log("Code");
-     // console.log("Camp");
+   
 }
 convertBtn.addEventListener("click",checkUserInput)
 numberInput.addEventListener("keydown",(e)=>{
