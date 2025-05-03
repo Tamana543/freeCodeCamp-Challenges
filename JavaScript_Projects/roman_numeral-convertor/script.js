@@ -27,6 +27,11 @@ function validation(){
           output.textContent = "MMMCMXCIX"
 
      
+     }else if(number.value < 0) {
+              output.textContent = "Please enter a number greater than or equal to 1"
+          }else {
+          output.textContent = "It is not in Roman Number lists darling !"
+
      }
 }
 btn.addEventListener("click",validation)
