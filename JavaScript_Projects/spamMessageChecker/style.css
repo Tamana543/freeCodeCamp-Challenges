@@ -6,19 +6,10 @@
   padding: 0;
 }
 
-:root {
-  --dark-grey: #1b1b32;
-  --light-grey: #f5f6f7;
-  --golden-yellow: #fecc4c;
-  --yellow: #ffcc4c;
-  --gold: #feac32;
-  --orange: #ffac33;
-  --dark-orange: #f89808;
-}
 
 body {
-  background-color: var(--dark-grey);
-  color: var(--light-grey);
+  background-color: rgba(22, 22, 22, 0.87);
+  color: #e3e2e2fe;
 }
 
 body,
@@ -47,6 +38,17 @@ textarea {
      margin-bottom: 20px;
      font-size: 1.5rem;
    }
+   #message-input {
+   padding: 1%;
+    border: 1px solid rgba(255, 93, 255, 0.507);
+    
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 16px;
+   background: none;
+   color: #ffffffd4;
+   }
    
    #message-input:placeholder-shown,
    textarea {
@@ -58,15 +60,18 @@ textarea {
      cursor: pointer;
      width: 200px;
      margin: 10px auto;
-     color: var(--dark-grey);
-     background-color: var(--gold);
-     background-image: linear-gradient(var(--golden-yellow), var(--orange));
-     border-color: var(--gold);
-     border-width: 3px;
+   padding: 1%;
+     
+     background-color: rgba(255, 0, 255, 0.507);
+     color: rgba(255, 255, 255, 0.772);
+     font-size: 16px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s;
    }
    
    .btn:hover {
-     background-image: linear-gradient(var(--yellow), var(--dark-orange));
+    background-color: rgba(255, 0, 255, 0.235);
    }
    
    #result {
