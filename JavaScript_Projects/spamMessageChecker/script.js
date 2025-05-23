@@ -2,8 +2,13 @@ const messageInput = document.getElementById("message-input")
 const result = document.getElementById("result")
 const checkMessageButton = document.getElementById("check-message-btn")
 
-const helpRegex = /please help|assist me/i // here
-const denyList = [helpRegex]
+// to chick the donation spans
+const helpRegex = /please help|assist me/i 
+// to chick the asking money spams
+const dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
+// to chick the pharase free money (some messages contains 3 instead of e)
+const freeRegex = /(?:\s|^)fr[e3][e3] m[o0]n[e3]y/i;
+const denyList = [helpRegex,dollarRegex,freeRegex]
 const isSpam = (msg)=> denyList.some(regex => regex.test(msg))
 checkMessageButton.addEventListener("click",()=>{
      if(messageInput.value === "") {
