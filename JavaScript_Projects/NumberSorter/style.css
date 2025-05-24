@@ -118,3 +118,17 @@ button:focus-visible {
   border: 3px solid var(--danger-color);
   color: var(--danger-color);
 }
+@media (min-width: 550px) {
+  form,
+  .output-container {
+    max-width: 480px;
+  }
+
+  fieldset {
+    max-width: 400px;
+  }
+
+  .output-array {
+    max-width: 420px;
+  }
+}
