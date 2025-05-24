@@ -25,3 +25,45 @@ body {
   background-color: var(--gray-85);
   color: var(--gray-05);
 }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 30px auto;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+fieldset {
+  border: 0 none;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+fieldset div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bracket,
+.comma {
+  font-size: 2.3em;
+}
+
+form .comma {
+  margin-left: 2px;
+}
