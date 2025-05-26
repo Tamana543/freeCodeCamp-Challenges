@@ -11,7 +11,7 @@ const sortInputArray = (event)=>{
      const inputValues = [...document.getElementsByClassName("values-dropdown")].map(dropdown=>Number(dropdown.value));
      updateUI(inputValues)
      // console.log(inputValues);
-     const sortedValues = insertionSort(inputValues)
+     const sortedValues = inputValues.sort((a,b)=> a-b)
      updateUI(sortedValues)
 }
 const bubbleSort = (array)=>{
