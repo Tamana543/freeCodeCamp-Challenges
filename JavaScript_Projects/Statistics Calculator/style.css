@@ -4,12 +4,37 @@ body {
   text-align: center;
   color: #fff;
 }
+.form {
+    width: 80%;
+    height: 60%;
+    padding: 2%;
+    gap: 2%;
+}
 
+input {
+    border: none;
+    border-bottom: 4px solid #b156fe;
+    margin-top: 5%;
+    font-size: 1.5rem;
+    /* padding: 1% 4%; */
+    color: #6001ad;
+}
+input:focus {
+    outline: none;
+    
+}
 button {
-  cursor: pointer;
-  background-color: rgb(59, 59, 79);
-  border: 3px solid white;
-  color: white;
+        padding: 0.5% 2%;
+    font-size: 1.4rem;
+    border: none;
+    background-color: #b156fe;
+    color: #fff;
+    /* border-radius: 10px; */
+    text-transform: capitalize;
+}
+button:hover {
+    cursor: pointer;
+border: 1px solid #b156fe;
 }
 
 input {
