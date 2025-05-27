@@ -1,14 +1,32 @@
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
 body {
   margin: 0;
   background-color: rgb(27, 27, 50);
   text-align: center;
   color: #fff;
+  flex-direction: column;
+  height: 100vh;
 }
-.form {
-    width: 80%;
+.flex {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.container {
+     font-size: 1.4rem;
+         width: 80%;
+    flex-direction: column;
+    gap: 3%;
     height: 60%;
-    padding: 2%;
-    gap: 2%;
+ }
+
+.form {
+       width: 80%;
+    height: 20%;
 }
 
 input {
