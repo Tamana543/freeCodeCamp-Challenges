@@ -17,10 +17,13 @@ const calculate = function(){
        const value = document.querySelector("#numbers").value;
        const array = value.split(/,\s*/g);
        const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
+       const mean = getMean(numbers)
+     // Volues assigning
+      document.querySelector("#mean").textContent = mean
 };
 
-function getMean(array){
-        const sum = array.reduce((acc,el)=> acc + el,0)
-        const mean = sum / array.length
-        return mean
+const getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
+const getMedian = (array)=>{
+    const sorted = array.sort((a,b) => a-b)
+  
 }
