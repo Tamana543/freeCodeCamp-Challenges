@@ -43,6 +43,9 @@ input:focus {
     outline: none;
     
 }
+.hidden {
+  display: none;
+}
 button {
         padding: 0.5% 2%;
     font-size: 1.4rem;
