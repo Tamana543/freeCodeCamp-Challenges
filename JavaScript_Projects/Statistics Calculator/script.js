@@ -1,5 +1,11 @@
-function hiddenTextEng(){
+const container = document.querySelector(".container")
 const hiddenText = document.getElementById("learnMore")
-console.log(hiddenText);
-hiddenText.classList.add("hidden")
+function displayTextEng(){
+hiddenText.classList.remove("hidden")
+container.classList.add("hidden")
+console.log(container);
+}
+function hideTextEng(){
+     hiddenText.classList.add("hidden")
+container.classList.remove("hidden")
 }
