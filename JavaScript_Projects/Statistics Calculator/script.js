@@ -29,6 +29,13 @@ const getMedian = (array)=>{
 
 
 }
+const getMode = (array)=>{
+  const counts = {};
+  array.forEach(counts[el]?counts[el]++ : counts[el]=1)
+    
+  return counts
+}
+
 // main Functionality
 const calculate = function(){
        const value = document.querySelector("#numbers").value;
