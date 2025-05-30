@@ -48,6 +48,13 @@ const getVariance =(array)=>{
   }, 0)/ array.length;
   return variance
 } ;
+const getStandardDeviation =(array)=>{
+  const variance = getVariance(array)
+  // writing root in js 
+  // const standardDeviation = Math.pow(variance,1/2)
+  const standardDeviation = Math.sqrt(variance)
+  return standardDeviation
+}
 // main Functionality
 const calculate = function(){
        const value = document.querySelector("#numbers").value;
@@ -58,10 +65,12 @@ const calculate = function(){
        const mode = getMode(numbers);
        const range = getRange(numbers);
        const variance = getVariance(numbers);
+       const standardDev = getStandardDeviation(numbers);
            // Volues assigning
       document.querySelector("#mean").textContent = mean
       document.querySelector("#median").textContent = median
       document.querySelector("#mode").textContent = mode
       document.querySelector("#range").textContent = range
       document.querySelector("#variance").textContent = variance
-};
+      document.querySelector("#standardDeviation").textContent = standardDev
+    }
