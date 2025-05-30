@@ -30,7 +30,7 @@ const getMode = (array)=>{
   const counts = {};
   array.forEach(el => counts[el] = counts[el] ? counts[el] + 1 : 1)
   if(new Set(Object.values(counts)).size === 1){
-    return null
+    return "No Mode"
   }
   const highest = Object.keys(counts).sort((a , b)=> counts[b]- counts[a])[0]
   const mode = Object.keys(counts).filter(el => counts[el] === counts[highest])
@@ -71,6 +71,6 @@ const calculate = function(){
       document.querySelector("#median").textContent = median
       document.querySelector("#mode").textContent = mode
       document.querySelector("#range").textContent = range
-      document.querySelector("#variance").textContent = variance
-      document.querySelector("#standardDeviation").textContent = standardDev
+      document.querySelector("#variance").textContent = Math.floor(variance)
+      document.querySelector("#standardDeviation").textContent = Math.floor(standardDev)
     }
