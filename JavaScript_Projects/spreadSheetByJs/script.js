@@ -7,15 +7,18 @@ const median= (nums)=>{
      const sorted =  nums.slice().sort((a,b)=> a - b)
      const length = sorted.length;
   const middle = length/2 -1;
-  if(isEven(length)) average(middle);
-  else Math.float(middle)
+  return isEven(length) ? average([sorted[middle + 1], sorted[middle]]) : sorted[Math.round(middle)];
   
 }
-
 const  range = (start,end)=>Array(end-start+1).fill(start).map((element,index)=> element+index)
+
 // new methood for changing string to num 
 const charRange =(start,end)=> range(start.charCodeAt(0),end.charCodeAt(0)).map((code)=>String.fromCharCode(code)) ;
-
+const spreadsheetFunctions = {
+     sum,
+     average,
+     median
+}
 window.onload = () => {
   const container = document.getElementById("container");
 const createLabel = (name)=>{
@@ -33,7 +36,13 @@ range(1,99).forEach((number)=>{
           input.type = "text"
           input.id=letter + number
           input.ariaLabel = letter+number
+          input.onchange = update
           container.appendChild(input)
      })
 })
+}
+
+//Using spreadsheet functions
+const update = (event)=>{
+
 }
