@@ -19,6 +19,10 @@ const spreadsheetFunctions = {
      average,
      median
 }
+// to parse and evauate the input 
+const evalFormula = (x , cells)=>{
+     const idToText = (id)=> cells.find(cell => cell.id===id).value
+}
 window.onload = () => {
   const container = document.getElementById("container");
 const createLabel = (name)=>{
@@ -44,5 +48,7 @@ range(1,99).forEach((number)=>{
 
 //Using spreadsheet functions
 const update = (event)=>{
-
+const element = event.target
+const value = element.value.replace(/\s/g,"")
+if(!value.includes(element.id) && value.startsWith("=")){}
 }
