@@ -21,6 +21,14 @@ const infixToFunction = {
 }
 
 const infixEval = (str,regex)=>str.replace(regex,(_match, arg1, operator,arg2)=>infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
+//order of operation check point
+const highPrecedence = (str)=>{
+     const regex = /([\d])[*|/]?([\d])/;
+     const str2 = infixEval(str,regex)
+   return str2===str ? str : highPrecedence(str2)
+//  return regex.test(str);
+}
+// console.log(highPrecedence("5*3"))
 // new methood for changing string to num 
 const charRange =(start,end)=> range(start.charCodeAt(0),end.charCodeAt(0)).map((code)=>String.fromCharCode(code)) ;
 const spreadsheetFunctions = {
