@@ -31,6 +31,8 @@ const highPrecedence = (str)=>{
 // console.log(highPrecedence("5*3"))
 // new methood for changing string to num 
 const charRange =(start,end)=> range(start.charCodeAt(0),end.charCodeAt(0)).map((code)=>String.fromCharCode(code)) ;
+
+
 const spreadsheetFunctions = {
      sum,
      average,
@@ -83,3 +85,14 @@ const element = event.target
 const value = element.value.replace(/\s/g,"")
 if(!value.includes(element.id) && value.startsWith("=")){}
 }
+// function parsing 
+const applyFunction =(str)=>{
+    const noHigh = highPrecedence(str)
+    //regular expression that matches a number (including decimal numbers) followed by a + or - operator followed by another number. 
+ const infix = /([\d.]+)([+-])([\d.]+)/
+ const str2 = infixEval(noHigh,infix)
+ //looking for function calls like sum(1, 4).
+ const functionCall= /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i
+ const toNumberList = (args)=>args.split(",").map(parseFloat)
+ const apply =(fn,args)=>{} ;
+} ;
