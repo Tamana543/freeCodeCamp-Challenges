@@ -38,6 +38,19 @@ const spreadsheetFunctions = {
      average,
      median
 }
+// function parsing 
+const applyFunction =(str)=>{
+    const noHigh = highPrecedence(str)
+    //regular expression that matches a number (including decimal numbers) followed by a + or - operator followed by another number. 
+ const infix = /([\d.]+)([+-])([\d.]+)/
+ const str2 = infixEval(noHigh,infix)
+ //looking for function calls like sum(1, 4).
+ const functionCall= /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i
+ const toNumberList = (args)=>args.split(",").map(parseFloat)
+ const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+   return str2.replace(functionCall,(match, fn,args)=>spreadsheetFunctions.hasOwnProperty(fn.toLowerCase())? apply(fn,args): match);
+} ;
+
 // to parse and evauate the input 
 const evalFormula = (x , cells)=>{
      const idToText = (id)=> cells.find(cell => cell.id===id).value;
@@ -55,6 +68,8 @@ const evalFormula = (x , cells)=>{
      const rangeExpanded = x.replace(rangeRegex,(_match,char1,num1,char2,num2)=>rangeFromString(num1,num2).map(addCharacters(char1)(char2)))
     const cellRegex = /[A-J][1-9][0-9]?/gi;
     const cellExpanded = rangeExpanded.replace(cellRegex,(match)=>idToText(match.toUpperCase()))
+    const functionExpanded = applyFunction(cellExpanded)
+    return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded,cells)
 }
 window.onload = () => {
   const container = document.getElementById("container");
@@ -85,14 +100,3 @@ const element = event.target
 const value = element.value.replace(/\s/g,"")
 if(!value.includes(element.id) && value.startsWith("=")){}
 }
-// function parsing 
-const applyFunction =(str)=>{
-    const noHigh = highPrecedence(str)
-    //regular expression that matches a number (including decimal numbers) followed by a + or - operator followed by another number. 
- const infix = /([\d.]+)([+-])([\d.]+)/
- const str2 = infixEval(noHigh,infix)
- //looking for function calls like sum(1, 4).
- const functionCall= /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i
- const toNumberList = (args)=>args.split(",").map(parseFloat)
- const apply =(fn,args)=>{} ;
-} ;
