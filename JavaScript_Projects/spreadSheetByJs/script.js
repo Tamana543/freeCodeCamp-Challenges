@@ -1,3 +1,4 @@
+const { Children } = require("react")
 
 // Arrow Functions, features like some, average.. in spreadsheets 
 const isEven = (num)=>num%2==0 ? true:false
@@ -36,7 +37,10 @@ const charRange =(start,end)=> range(start.charCodeAt(0),end.charCodeAt(0)).map(
 const spreadsheetFunctions = {
      sum,
      average,
-     median
+     median,
+     even : (nums)=> nums.filter(isEven),
+     firsttwo : (nums)=> [nums[0],nums[1]],
+       lasttwo : (nums)=> [nums[nums.length-2],nums[nums.length-1]]
 }
 // function parsing 
 const applyFunction =(str)=>{
@@ -98,5 +102,7 @@ range(1,99).forEach((number)=>{
 const update = (event)=>{
 const element = event.target
 const value = element.value.replace(/\s/g,"")
-if(!value.includes(element.id) && value.startsWith("=")){}
+if(!value.includes(element.id) && value.startsWith("=")){
+     element.value = evalFormula(value.slice(1),Array.from(document.getElementById("container").children))
+}
 }
