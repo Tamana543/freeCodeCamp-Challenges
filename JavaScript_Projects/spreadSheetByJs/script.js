@@ -1,4 +1,4 @@
-const { Children } = require("react")
+
 
 // Arrow Functions, features like some, average.. in spreadsheets 
 const isEven = (num)=>num%2==0 ? true:false
@@ -40,7 +40,13 @@ const spreadsheetFunctions = {
      median,
      even : (nums)=> nums.filter(isEven),
      firsttwo : (nums)=> [nums[0],nums[1]],
-       lasttwo : (nums)=> [nums[nums.length-2],nums[nums.length-1]]
+       lasttwo : (nums)=> [nums[nums.length-2],nums[nums.length-1]],
+    has2 : (nums)=> nums.includes(2) ? true : false,
+    increment: (nums)=>nums.map(num => num + 1),
+    someeven : (nums)=>nums.some(el => el%2===0) ? true : false,
+    everyeven : (nums)=>nums.every(el => el%2===0) ? true : false,
+     random: ([x, y]) => Math.floor(Math.random() * y + x),
+     range: (nums)=>range(nums[0],nums[1]),
 }
 // function parsing 
 const applyFunction =(str)=>{
