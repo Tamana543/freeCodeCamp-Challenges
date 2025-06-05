@@ -47,6 +47,9 @@ const spreadsheetFunctions = {
     everyeven : (nums)=>nums.every(el => el%2===0) ? true : false,
      random: ([x, y]) => Math.floor(Math.random() * y + x),
      range: (nums)=>range(nums[0],nums[1]),
+     nodupes: nums => [...new Set(nums).values()],
+      "" : nums=>nums
+
 }
 // function parsing 
 const applyFunction =(str)=>{
