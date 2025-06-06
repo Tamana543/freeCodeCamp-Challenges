@@ -38,6 +38,11 @@ border-radius: 8px;
      margin: 10%;
 
 }
+.btn_containers {
+     width: 100%;
+     flex-direction: row !important;
+     justify-content: space-around !important;
+}
 button {
      font-size: 1em;
 margin: 5% 0%;
@@ -45,10 +50,9 @@ background-color: #43a29c;
 color: #fff;
 border-color: #fff;
 cursor: pointer;
+text-transform:capitalize;
 }
-
-.btn_containers {
-     width: 100%;
-     flex-direction: row !important;
-     justify-content: space-around !important;
+button:hover {
+     background-color: #51bfb8;
+    box-shadow: inset 0px 0px 2px 1px #000;
 }
