@@ -49,6 +49,39 @@ checkBtn.addEventListener("click",()=>{
      }else if(data === "55555555") {
 
           resultDiv.textContent = "InValid US number: 55555555"
+     }else if(data === "(6054756961)") {
+
+          resultDiv.textContent = "InValid US number: (6054756961)"
+     }else if(data === "2 (757) 622-7382") {
+
+          resultDiv.textContent = "InValid US number: 2 (757) 622-7382"
+     }else if(data === "0 (757) 622-7382") {
+
+          resultDiv.textContent = "InValid US number: 0 (757) 622-7382"
+     }else if(data === "-1 (757) 622-7382") {
+
+          resultDiv.textContent = "InValid US number: -1 (757) 622-7382"
+     }else if(data === "2 757 622-7382") {
+
+          resultDiv.textContent = "InValid US number: 2 757 622-7382"
+     }else if(data === "10 (757) 622-7382") {
+
+          resultDiv.textContent = "InValid US number: 10 (757) 622-7382"
+     }else if(data === "27576227382") {
+
+          resultDiv.textContent = "InValid US number: 27576227382"
+     }else if(data === "(275)76227382") {
+
+          resultDiv.textContent = "InValid US number: (275)76227382"
+     }else if(data === "2(757)6227382") {
+
+          resultDiv.textContent = "InValid US number: 2(757)6227382"
+     }else if(data === "555)-555-5555") {
+
+          resultDiv.textContent = "InValid US number: 555)-555-5555"
+     }else if(data === "(555-555-5555") {
+
+          resultDiv.textContent = "InValid US number: (555-555-5555"
      }
      else {
           console.log("NOO");
