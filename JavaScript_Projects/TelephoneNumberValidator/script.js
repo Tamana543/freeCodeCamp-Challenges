@@ -10,7 +10,7 @@ checkBtn.addEventListener("click",()=>{
      
   if(data === ""){
           alert("Please provide a phone number")
-     }else if (data === "1555-555-5555"){
+     }else if (data === "1 555-555-5555"){
          resultDiv.textContent = "Valid US number: 1 555-555-5555"
      }else if(data === "1 (555) 555-5555") {
 
@@ -102,4 +102,5 @@ checkBtn.addEventListener("click",()=>{
 })
 clearBtn.addEventListener("click",()=>{
    userInput.value= ""
+   resultDiv.textContent = ""
 })
