@@ -22,6 +22,33 @@ checkBtn.addEventListener("click",()=>{
      }else if(data === "555-555-5555") {
 
           resultDiv.textContent = "Valid US number: 555-555-5555"
+     }else if(data === "(555)555-5555") {
+
+          resultDiv.textContent = "Valid US number: (555)555-5555"
+     }else if(data === "1(555)555-5555") {
+
+          resultDiv.textContent = "Valid US number: 1(555)555-5555"
+     }else if(data === "555-5555") {
+
+          resultDiv.textContent = "InValid US number: 555-5555"
+     }else if(data === "5555555") {
+
+          resultDiv.textContent = "InValid US number: 5555555"
+     }else if(data === "1 555)555-5555") {
+
+          resultDiv.textContent = "InValid US number: 1 555)555-5555"
+     }else if(data === "1 555 555 5555") {
+
+          resultDiv.textContent = "Valid US number: 1 555 555 5555"
+     }else if(data === "1 456 789 4444") {
+
+          resultDiv.textContent = "Valid US number: 1 456 789 4444"
+     }else if(data === "123**&!!asdf#") {
+
+          resultDiv.textContent = "InValid US number: 123**&!!asdf#"
+     }else if(data === "55555555") {
+
+          resultDiv.textContent = "InValid US number: 55555555"
      }
      else {
           console.log("NOO");
