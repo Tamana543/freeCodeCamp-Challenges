@@ -48,3 +48,4 @@ function isValidUSPhoneNumber(str) {
 
   return false;
 }
+// /^1? ?(( ?\d{3} [- ]*)|(\( ?\d{3}[- ]*\) *))\d{3}[- ]?\d{4}$/gm, /\d{10}/gm, /\d*\(\d[\d)]{3}\d{3}-\d{4}/gm, /\d{3}-\d{3}-\d{4}/gm, /^\d\s\d{3}-\d{3}-\d{4}/gm
