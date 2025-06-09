@@ -25,27 +25,18 @@ clearBtn.addEventListener("click", () => {
 });
 
 // VALIDATOR FUNCTION / work more !!!!
+
 function isValidUSPhoneNumber(str) {
-  // Reject if any invalid characters (letters or symbols)
-  if (/[^0-9\s\-()]/.test(str)) return false;
-
-  // Parentheses must be properly opened and closed and wrap exactly 3 digits
-  if (str.includes("(") || str.includes(")")) {
-    if (!/\(\d{3}\)/.test(str)) return false;
-    // Must not have unmatched or misplaced parentheses
-    if (str.indexOf("(") > str.indexOf(")")) return false;
-    if (str.match(/\(/g)?.length !== str.match(/\)/g)?.length) return false;
-  }
-
-  // Remove all non-digit characters to count digits
-  const numbersOnly = str.replace(/\D/g, "");
-
-  if (numbersOnly.length === 10) {
-    return true;
-  } else if (numbersOnly.length === 11 && numbersOnly.startsWith("1")) {
-    return true;
-  }
-
-  return false;
+  const pattern = new RegExp(
+    '^([+]?1[\\s]?)?' + // optional country code
+    '(' +
+      '(\\([2-9]1[02-9]\\)|\\([2-9][02-8][0-9]\\)[\\s]?)' + // area code in parentheses
+      '|' +
+      '([2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?' + // or area code without parentheses
+    ')' +
+    '([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})[\\s.-]?' + // valid exchange code
+    '([0-9]{4})$' // last 4 digits
+  );
+  return pattern.test(str);
 }
 // /^1? ?(( ?\d{3} [- ]*)|(\( ?\d{3}[- ]*\) *))\d{3}[- ]?\d{4}$/gm, /\d{10}/gm, /\d*\(\d[\d)]{3}\d{3}-\d{4}/gm, /\d{3}-\d{3}-\d{4}/gm, /^\d\s\d{3}-\d{3}-\d{4}/gm
