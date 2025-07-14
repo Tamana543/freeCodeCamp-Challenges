@@ -50,3 +50,7 @@
 
 #### Project Fifteen Statistics Calculator App
 
+### Project sixteen TelephoneNumber convertor ( Not completed)
+
+### Project seventeen Shopping Cart
+
