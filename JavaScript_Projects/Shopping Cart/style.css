@@ -12,11 +12,7 @@
   --black: #000;
   --white: #fff;
   --grey: #3b3b4f;
-  --golden-yellow: #fecc4c;
-  --yellow: #ffcc4c;
-  --gold: #feac32;
-  --orange: #ffac33;
-  --dark-orange: #f89808;
+--pink: #d468d4;
 }
 
 body {
@@ -46,20 +42,27 @@ body {
 .dessert-price {
   font-size: 1.2rem;
 }
-
-.btn {
-  display: block;
+ .btn {
+     margin-top: 3%;
+     margin-right: 5%;
+      display: block;
   cursor: pointer;
   width: 100px;
-  color: var(--dark-grey);
-  background-color: var(--gold);
-  background-image: linear-gradient(var(--golden-yellow), var(--orange));
-  border-color: var(--gold);
-  border-width: 3px;
+  font: inherit;
+  border: 1px solid var(--pink);
+  color: #fce2ff;;
+  background: var(--white);
+  border-radius: 3px;
+   background-image: linear-gradient(#f5aaf5, var(--pink));
+     border-width: 3px;
 }
-.btn:hover {
-  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+ button:hover,
+button:active,.btn:hover,
+.btn:active {
+  background-color: var(--pink);
+  color: var(--white);
 }
+
 
 #cart-btn {
   position: absolute;
