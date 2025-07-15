@@ -57,3 +57,31 @@ body {
   border-color: var(--gold);
   border-width: 3px;
 }
+.btn:hover {
+  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+}
+
+#cart-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.add-to-cart-btn {
+  margin: 30px auto 10px;
+}
+
+#cart-container {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--light-grey);
+  width: 200px;
+  height: 400px;
+  border: 8px double var(--black);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  overflow-y: scroll;
+}
