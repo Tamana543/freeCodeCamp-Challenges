@@ -7,16 +7,18 @@
 }
 
 :root {
-  --dark-grey: #1b1b32;
+  --dark-grey: rgba(22, 22, 22, 0.87);
   --light-grey: #f5f6f7;
+  --dark_gray : rgb(57, 58, 58);
   --black: #000;
   --white: #fff;
   --grey: #3b3b4f;
---pink: #d468d4;
+--pink: #674667;
 }
 
 body {
   background-color: var(--dark-grey);
+color: #adb0b3;
 }
 
 .title {
@@ -32,7 +34,8 @@ body {
 }
 
 .dessert-card {
-  background-color: var(--light-grey);
+ border: outset 1.5mm rgba(22, 22, 22, 0.137);
+    box-shadow: inset -1px -1px 20px 6px rgba(22, 22, 22, 0.87);
   padding: 15px;
   text-align: center;
   border-radius: 15px;
@@ -43,8 +46,6 @@ body {
   font-size: 1.2rem;
 }
  .btn {
-     margin-top: 3%;
-     margin-right: 5%;
       display: block;
   cursor: pointer;
   width: 100px;
@@ -53,8 +54,9 @@ body {
   color: #fce2ff;;
   background: var(--white);
   border-radius: 3px;
-   background-image: linear-gradient(#f5aaf5, var(--pink));
+   background-image: linear-gradient(#b08eb0, var(--pink));
      border-width: 3px;
+     padding: 1% 0%;
 }
  button:hover,
 button:active,.btn:hover,
@@ -65,9 +67,9 @@ button:active,.btn:hover,
 
 
 #cart-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
+    position: absolute;
+    top: 10px;
+    right: 13px;
 }
 
 .add-to-cart-btn {
@@ -79,7 +81,10 @@ button:active,.btn:hover,
   position: absolute;
   top: 60px;
   right: 0;
-  background-color: var(--light-grey);
+  background-color: var(--dark_gray);
+     /* box-shadow: inset -1px -1px 20px 6px rgba(22, 22, 22, 0.87); */
+     filter: blur(1);
+  /* color: #000; */
   width: 200px;
   height: 400px;
   border: 8px double var(--black);
