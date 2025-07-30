@@ -41,6 +41,25 @@ class ShoppingCart {
           
            currentProductCount > 1 ?   currentProductCountSpan.textContent =`${currentProductCount}x`: productsContainer.innerHTML += `<div class="product" id="dessert${id}"><p><span class="product-count" id="product-count-for-id${id}"></span>${name}</p><p>${price}</p></div>`;
      }
+     getCounts(){
+          return this.items.length
+     }
 }
 
 const cart = new ShoppingCart() ;
+
+const addToCartBtns = document.getElementsByClassName("add-to-cart-btn")
+const Btns  = [...addToCartBtns]
+Btns.forEach((btn)=>{
+     btn.addEventListener('click',(event)=>{
+          
+cart.addItem(Number(event.target.id),products);
+totalNumberOfItems.textContent = cart.getCounts()
+     })
+});
+
+cartBtn.addEventListener("click",()=>{
+     isCartShowing = !isCartShowing
+     showHideCartSpan.textContent = isCartShowing?"Hide":"Show";
+    cartContainer.style.display = isCartShowing ?  "block" :"none"
+})
