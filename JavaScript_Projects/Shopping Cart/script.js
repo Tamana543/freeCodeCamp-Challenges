@@ -44,6 +44,35 @@ class ShoppingCart {
      getCounts(){
           return this.items.length
      }
+     calculateTaxes(amount){
+         return parseFloat(((this.taxRate / 100) * amount).toFixed(2))//This will round the number to two decimal places and return a string.
+         
+     }
+     calculateTotal(){
+           const subTotal = this.items.reduce((total,item)=>total +item.price,0)
+           const tax= this.calculateTaxes(subTotal);
+           this.total = subTotal + tax;
+           cartSubTotal.textContent = `$${subTotal.toFixed(2)}`
+           cartTaxes.textContent = `$${tax.toFixed(2)}`
+           cartTotal.textContent = `$${this.total.toFixed(2)}`
+           return this.total
+     }
+     clearCart(){
+          if(!this.items.length){
+               alert("Your shopping cart is already empty")
+               return;
+          }
+          const isCartCleared = confirm("Are you sure you want to clear all items from your shopping cart?")
+          if(isCartCleared){
+               this.items = [];
+               this.total = 0
+               productsContainer.innerHTML = ""
+               totalNumberOfItems.textContent = 0
+               cartSubTotal.textContent = 0
+               cartTotal.textContent = 0
+               cartTaxes.textContent = 0
+          }
+     }
 }
 
 const cart = new ShoppingCart() ;
@@ -55,7 +84,9 @@ Btns.forEach((btn)=>{
           
 cart.addItem(Number(event.target.id),products);
 totalNumberOfItems.textContent = cart.getCounts()
-     })
+cart.calculateTotal()     
+})
+     
 });
 
 cartBtn.addEventListener("click",()=>{
