@@ -37,4 +37,13 @@ class Player {
           this.height = proportionalSize(40)
 
      }
+     draw(){
+        // to set canvas color
+        ctx.fillStyle =   "#99c9ff";
+     //    to create the player's shape by calling the fillRect() method on the ctx object which you instantiated earlier.
+     ctx.fillRect(this.position.x, this.position.y, this.width,this.height)
+     }
+     update(){
+          this.draw()
+     }
 }
