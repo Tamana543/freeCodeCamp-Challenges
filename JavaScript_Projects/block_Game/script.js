@@ -65,4 +65,23 @@ class Player {
                this.position.x = canvas.width - this.width * 2
            }
      }
+
 }
+const player = new Player();
+const startGame = ()=>{
+     canvas.style.display = "block";
+     startScreen.style.display = "none"
+     player.draw()
+}
+startBtn.addEventListener('click',startGame)
+const animate = ()=>{
+     requestAnimationFrame(animate)//requestAnimationFrame() web API, takes in a callback and is used to update the animation on the screen. The animate function will be responsible for updating the player's position and continually drawing it on the canvas.
+     // first clear the canvas to move the player
+     ctx.clearRect(0, 0, canvas.width, canvas.height)
+     // next update the player's position
+     player.update()
+
+     //To manage the player's movement in the game, you will need to monitor when the left and right arrow keys are pressed.
+
+     const keys = {};
+};
