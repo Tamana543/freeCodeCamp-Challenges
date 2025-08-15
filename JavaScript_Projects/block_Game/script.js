@@ -82,6 +82,15 @@ const animate = ()=>{
      player.update()
 
      //To manage the player's movement in the game, you will need to monitor when the left and right arrow keys are pressed.
-
-     const keys = {};
+     // increasing or decreasing a player's velocity based on if they move to the left or right of the screen.
+     if (keys.rightKey.pressed && player.position.x < proportionalSize(400)) {}
+     
+};
+const keys = {
+     rightKey : {
+          pressed : false
+     },
+     leftKey : {
+          pressed : false
+     }
 };
