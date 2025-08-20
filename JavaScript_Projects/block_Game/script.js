@@ -115,8 +115,29 @@ switch (key) {
           }
           player.velocity.x -= xVelocity
           break;
-
+     
+          case "ArrowUp" :
+          player.velocity.y -=8
+          case " " : 
+          player.velocity.y -=8
+          case "Spacebar" : 
+          player.velocity.y -=8
+          break;
+          case "ArrowRight" : 
+          keys.rightKey.pressed = isPressed
+          if(xVelocity===0){
+               player.velocity.x = xVelocity
+          }
+          player.velocity.x +=xVelocity
+          break;
+          
      default:
           break;
 }
 }
+window.addEventListener("keydown",({key})=>{
+   movePlayer(key,8,true)  
+})
+window.addEventListener('keyup',({key})=>{
+   movePlayer(key,0,false)  
+})
