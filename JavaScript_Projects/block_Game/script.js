@@ -71,7 +71,8 @@ const player = new Player();
 const startGame = ()=>{
      canvas.style.display = "block";
      startScreen.style.display = "none"
-     player.draw()
+     animate()
+
 }
 startBtn.addEventListener('click',startGame)
 const animate = ()=>{
@@ -141,3 +142,13 @@ window.addEventListener("keydown",({key})=>{
 window.addEventListener('keyup',({key})=>{
    movePlayer(key,0,false)  
 })
+class Platform {
+constructor(x,y){
+// omit the property value if it is the same as the property name.
+this.position = {
+     x,y
+},
+this.width = 200,
+this.height = proportionalSize(40)//use the proportionalSize() function to make sure the height is proportional to the screen size.
+}
+}
