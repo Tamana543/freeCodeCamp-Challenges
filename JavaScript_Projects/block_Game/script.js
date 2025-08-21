@@ -89,7 +89,9 @@ const startGame = ()=>{
 
 }
 startBtn.addEventListener('click',startGame)
-const platforms = platformPositions.map()
+const platforms = platformPositions.map(
+      (platform) => new Platform(platform.x, platform.y)
+)
 const animate = ()=>{
      requestAnimationFrame(animate)//requestAnimationFrame() web API, takes in a callback and is used to update the animation on the screen. The animate function will be responsible for updating the player's position and continually drawing it on the canvas.
      // first clear the canvas to move the player
