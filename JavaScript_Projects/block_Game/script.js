@@ -68,6 +68,7 @@ class Player {
 
 }
 const player = new Player();
+const platformPositions =[]
 const startGame = ()=>{
      canvas.style.display = "block";
      startScreen.style.display = "none"
@@ -149,6 +150,10 @@ this.position = {
      x,y
 },
 this.width = 200,
-this.height = proportionalSize(40)//use the proportionalSize() function to make sure the height is proportional to the screen size.
+this.height = proportionalSize(40);//use the proportionalSize() function to make sure the height is proportional to the screen size.
+}
+draw(){
+ctx.fillStyle = "#acd157";
+ctx.fillRect(this.position.x,this.position.y,this.width,this.height)
 }
 }
