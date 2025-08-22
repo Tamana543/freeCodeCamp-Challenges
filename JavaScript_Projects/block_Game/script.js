@@ -12,7 +12,7 @@ You will need to use the getContext method which will provide the context for wh
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth
 canvas.height = innerHeight
-const gravity =0.5 ;
+const gravity =0.5 ;i
 let isCheckpointCollisionDetectionActive = true;
 /**
  As you are designing the game, you will need to make sure that the size of the elements in the game are responsive and adapt to different screen sizes.
@@ -96,6 +96,9 @@ const animate = ()=>{
      requestAnimationFrame(animate)//requestAnimationFrame() web API, takes in a callback and is used to update the animation on the screen. The animate function will be responsible for updating the player's position and continually drawing it on the canvas.
      // first clear the canvas to move the player
      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+     // to draw each of the platforms onto the canvas.
+     platforms.forEach(platform=>platform.draw())
      // next update the player's position
      player.update()
 
@@ -107,8 +110,21 @@ const animate = ()=>{
  player.velocity.x  = -5
 }else{
           player.velocity.x  = 0
+          if(isCheckpointCollisionDetectionActive && keys.rightKey.pressed){
+               platforms.forEach(platform=>platform.position.x -=5)
+          }else if(isCheckpointCollisionDetectionActive && keys.leftKey.pressed){
+   platforms.forEach(platform=>platform.position.x +=5)
+          }
 
      }
+     // To fix jumps
+     platforms.forEach(platform=>{
+const collisionDetectionRules = [
+//boolean expression that checks whether the player's y position plus the player's height is less than or equal to the platform's y position.
+      player.position.y + player.height <= platform.position.y,
+];
+
+     })
      
 };
 const keys = {
