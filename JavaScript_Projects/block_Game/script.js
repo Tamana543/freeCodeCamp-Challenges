@@ -12,7 +12,7 @@ You will need to use the getContext method which will provide the context for wh
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth
 canvas.height = innerHeight
-const gravity =0.5 ;i
+const gravity =0.5 ;
 let isCheckpointCollisionDetectionActive = true;
 /**
  As you are designing the game, you will need to make sure that the size of the elements in the game are responsive and adapt to different screen sizes.
@@ -87,6 +87,20 @@ class CheckPoint {
           this.position.y = Infinity
           this.claimed = true
      }
+}
+class Platform {
+constructor(x,y){
+// omit the property value if it is the same as the property name.
+this.position = {
+     x,y
+},
+this.width = 200,
+this.height = proportionalSize(40);//use the proportionalSize() function to make sure the height is proportional to the screen size.
+}
+draw(){
+ctx.fillStyle = "#acd157";
+ctx.fillRect(this.position.x,this.position.y,this.width,this.height)
+}
 }
 const player = new Player();
 const platformPositions =[
@@ -253,17 +267,3 @@ window.addEventListener("keydown",({key})=>{
 window.addEventListener('keyup',({key})=>{
    movePlayer(key,0,false)  
 })
-class Platform {
-constructor(x,y){
-// omit the property value if it is the same as the property name.
-this.position = {
-     x,y
-},
-this.width = 200,
-this.height = proportionalSize(40);//use the proportionalSize() function to make sure the height is proportional to the screen size.
-}
-draw(){
-ctx.fillStyle = "#acd157";
-ctx.fillRect(this.position.x,this.position.y,this.width,this.height)
-}
-}
