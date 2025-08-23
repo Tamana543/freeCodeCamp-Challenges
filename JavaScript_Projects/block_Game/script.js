@@ -122,9 +122,22 @@ const animate = ()=>{
 const collisionDetectionRules = [
 //boolean expression that checks whether the player's y position plus the player's height is less than or equal to the platform's y position.
       player.position.y + player.height <= platform.position.y,
+      player.position.y + player.height + player.velocity.y >= platform.position.y,
+      player.position.x >= platform.position.x - (player.width/2),
+  player.position.x <= platform.position.x + platform.width - player.width / 3,
 ];
-
+if(collisionDetectionRules.every(rule=>rule) ){
+      player.velocity.y = 0
+      return;
+}
+const platformDetectionRules =[
+player.position.x >= platform.position.x - player.width / 2,
+player.position.x <= platform.position.x + platform.width - player.width / 3,
+player.position.y + player.height >= platform.position.y,
+player.position.y <= platform.position.y + platform.height
+] ;
      })
+     
      
 };
 const keys = {
