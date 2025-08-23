@@ -109,10 +109,19 @@ const startGame = ()=>{
      animate()
 
 }
+const showCheckpointScreen = (msg=>{
+     
+}) ;
 startBtn.addEventListener('click',startGame)
 const platforms = platformPositions.map(
       (platform) => new Platform(platform.x, platform.y)
 )
+const checkpointPositions =[
+     { x: 1170, y: proportionalSize(80), z: 1},
+     { x: 2900, y: proportionalSize(330), z: 2 },
+     { x: 4800, y: proportionalSize(80), z: 3}
+] ;
+const checkpoints = checkpointPositions.map(checkpoint =>new CheckPoint(checkpoint.x, checkpoint.y ,checkpoint.z)) ;
 const animate = ()=>{
      requestAnimationFrame(animate)//requestAnimationFrame() web API, takes in a callback and is used to update the animation on the screen. The animate function will be responsible for updating the player's position and continually drawing it on the canvas.
      // first clear the canvas to move the player
@@ -122,7 +131,8 @@ const animate = ()=>{
      platforms.forEach(platform=>platform.draw())
      // next update the player's position
      player.update()
-
+// to draw each of the checkpoints onto the canvas.
+checkpoints.forEach(checkpoint=> checkpoint.draw())
      //To manage the player's movement in the game, you will need to monitor when the left and right arrow keys are pressed.
      // increasing or decreasing a player's velocity based on if they move to the left or right of the screen.
      if (keys.rightKey.pressed && player.position.x < proportionalSize(400)) {
@@ -133,8 +143,10 @@ const animate = ()=>{
           player.velocity.x  = 0
           if(isCheckpointCollisionDetectionActive && keys.rightKey.pressed){
                platforms.forEach(platform=>platform.position.x -=5)
+           checkpoints.forEach(checkpoint=>checkpoint.position.x -= 5)
           }else if(isCheckpointCollisionDetectionActive && keys.leftKey.pressed){
    platforms.forEach(platform=>platform.position.x +=5)
+   checkpoints.forEach(checkpoint=>checkpoint.position.x +=5)
           }
 
      }
