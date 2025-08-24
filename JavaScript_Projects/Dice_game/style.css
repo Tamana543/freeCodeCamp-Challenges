@@ -102,3 +102,19 @@ input[type="radio"]:disabled + label {
   border-color: var(--gold);
   border-width: 3px;
 }
+
+.btn:hover:enabled {
+  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+}
+
+@media (max-width: 992px) {
+  main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    width: 120px;
+  }
+}
