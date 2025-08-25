@@ -16,4 +16,29 @@ let round = 1;
 let diceValuesArr = [];
 let isModalShowing = false;
 
-rulesBtn.addEventListener("click")
+rulesBtn.addEventListener("click",()=>{
+     isModalShowing = !isModalShowing;// new trick
+     if(isModalShowing){
+          rulesContainer.style.display = "block";
+          
+          rulesBtn.textContent = "Hide rules"
+     }else {
+          rulesContainer.style.display = "none";
+          
+          rulesBtn.textContent = "Show rules"
+
+     }
+})
+rollDiceBtn.addEventListener("click",()=>{
+     if(diceValuesArr.length == 0){
+
+          for(let i = 1 ; i <=5 ; i++){
+               const randNum = Math.floor(Math.random()) + 1
+               diceValuesArr.push(randNum)
+     
+          }
+     }else {
+          diceValuesArr.length = 0
+     }
+     console.log(diceValuesArr);
+})
