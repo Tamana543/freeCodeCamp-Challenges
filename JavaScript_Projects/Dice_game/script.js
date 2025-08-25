@@ -29,16 +29,20 @@ rulesBtn.addEventListener("click",()=>{
 
      }
 })
-rollDiceBtn.addEventListener("click",()=>{
-     if(diceValuesArr.length == 0){
+const diceRoller = ()=>{
+diceValuesArr = []
 
           for(let i = 1 ; i <=5 ; i++){
-               const randNum = Math.floor(Math.random()) + 1
+               const randNum = Math.floor(Math.random()*6) + 1
                diceValuesArr.push(randNum)
      
+               listOfAllDice.forEach((option,index)=>{
+               option.textContent = diceValuesArr[index]
+               })
           }
-     }else {
-          diceValuesArr.length = 0
-     }
-     console.log(diceValuesArr);
+     
+     // console.log(diceValuesArr);
+}
+rollDiceBtn.addEventListener("click",()=>{
+  diceRoller()
 })
