@@ -7,14 +7,14 @@
 }
 
 :root {
-  --dark-grey: #1b1b32;
-  --light-grey: #f5f6f7;
+  --dark-grey: #4d4d62;
+  --light-grey: #b4b8bd;
   --black: #000;
   --white: #fff;
   --grey: #3b3b4f;
   --golden-yellow: #fecc4c;
   --yellow: #ffcc4c;
-  --gold: #feac32;
+  --gold: #f4cd94;
   --orange: #ffac33;
   --dark-orange: #f89808;
 }
@@ -95,6 +95,7 @@ input[type="radio"]:disabled + label {
 .btn {
   cursor: pointer;
   width: 200px;
+  padding: 1%;
   margin: 10px 0 10px 0.5rem;
   color: var(--black);
   background-color: var(--gold);
