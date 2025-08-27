@@ -47,11 +47,26 @@ const updateStats = ()=>{
      roundElement.textContent = round;
      rollsElement.textContent = rolls
 }
+
+const getHighestDuplicates = (array)=>{
+const numCounter ={} ;
+
+for(const num of array)
+if(numCounter[num]){
+numCounter[num]++
+}else {
+numCounter[num] = 1
+}
+const sum = array.reduce((acc, el) => acc + el, 0);
+// console.log(sum);
+
+}
 rollDiceBtn.addEventListener("click",()=>{
      if(rolls < 3) {
           diceRoller()
           rolls ++;
           updateStats()
+          getHighestDuplicates(diceValuesArr)
 
      }else {
           rollDiceBtn.disabled = true
@@ -64,3 +79,4 @@ scoreInputs[index].disabled =false;
 scoreInputs[index].value = score;
 scoreSpans[index].textContent = `, score = ${score}`;
 }
+
