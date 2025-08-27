@@ -1,4 +1,4 @@
-# Projects for practicing CSS challenges. (HTML_CSS Folder)
+# View Responsive Web Design Certification(HTML_CSS Folder)
 
 #### Project One 
 [Live](https://silly-pika-0c9331.netlify.app/)
@@ -18,7 +18,7 @@
 #### Project Five 
 [Live](https://animated-sunburst-ac1db8.netlify.app/)
 
-# Projects For JavaScript (JavaScript_Projects Folder)
+# JavaScript Algorithms and Data Structures (JavaScript_Projects Folder)
 
 #### Project One_Pyrammid 
 
