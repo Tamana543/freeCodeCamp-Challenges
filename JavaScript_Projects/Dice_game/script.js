@@ -43,6 +43,24 @@ diceValuesArr = []
      
      // console.log(diceValuesArr);
 }
+const updateStats = ()=>{
+     roundElement.textContent = round;
+     rollsElement.textContent = rolls
+}
 rollDiceBtn.addEventListener("click",()=>{
-  diceRoller()
+     if(rolls < 3) {
+          diceRoller()
+          rolls ++;
+          updateStats()
+
+     }else {
+          rollDiceBtn.disabled = true
+          alert("Select Your score, no more role greather than 3")
+     }
 })
+
+const updateRadioOption = (index,score)=>{
+scoreInputs[index].disabled =false;
+scoreInputs[index].value = score;
+scoreSpans[index].textContent = `, score = ${score}`;
+}
