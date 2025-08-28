@@ -50,6 +50,7 @@ const updateStats = ()=>{
 
 const getHighestDuplicates = (array)=>{
 const numCounter ={} ;
+let highestCount = 0; 
 
 for(const num of array)
 if(numCounter[num]){
@@ -57,10 +58,29 @@ numCounter[num]++
 }else {
 numCounter[num] = 1
 }
+// to count the repetatin of the num 
+for(const num of array){
+     const counting = numCounter[num];
+     if(counting >=3 && counting > highestCount){
+          highestCount = counting
+     }
+     if(counting >= 4 && counting > highestCount){
+          highestCount = counting
+     }
+}
 const sum = array.reduce((acc, el) => acc + el, 0);
 // console.log(sum);
 
+if(highestCount >= 4){
+     updateRadioOption(1, sum)
 }
+if(highestCount>=3){
+     updateRadioOption(0,sum)
+}
+updateRadioOption(5,0)
+
+}
+
 rollDiceBtn.addEventListener("click",()=>{
      if(rolls < 3) {
           diceRoller()
