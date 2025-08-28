@@ -95,6 +95,21 @@ li.textContent= `${id} : ${newScore}`
 scoreHistory.appendChild(li)
 // scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
 };
+const resetGame = ()=>{
+     diceValuesArr = [0,0,0,0,0]
+
+     score = 0;
+     round=1; 
+     rolls = 0;
+     listOfAllDice.forEach((item,index)=>{
+          item.textContent = diceValuesArr[index]
+     })
+     totalScoreElement.textContent = score;
+     scoreHistory.innerHTML = ""
+     rollsElement.textContent = rolls;
+     roundElement.textContent = round;
+  resetRadioOptions()
+}
 keepScoreBtn.addEventListener("click",()=>{
      let value ;
      let id;
@@ -112,6 +127,13 @@ if(value){
      updateStats();
      resetRadioOptions();
      updateScore(value,id)
+     if(round==6){
+          setTimeout(() => {
+               alert(`Your final score is ${score}`)
+               resetGame()
+          }, 500);
+          
+     }
 }else {
      alert("Select an option darling ")
 }
