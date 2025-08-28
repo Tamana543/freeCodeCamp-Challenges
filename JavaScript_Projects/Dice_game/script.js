@@ -95,6 +95,28 @@ li.textContent= `${id} : ${newScore}`
 scoreHistory.appendChild(li)
 // scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
 };
+keepScoreBtn.addEventListener("click",()=>{
+     let value ;
+     let id;
+   
+     for(const buttons of scoreInputs){
+          if(buttons.checked){
+           value = buttons.value;
+               id = buttons.id
+               break;
+          }  
+     }
+if(value){
+     round++
+     rolls = 0
+     updateStats();
+     resetRadioOptions();
+     updateScore(value,id)
+}else {
+     alert("Select an option darling ")
+}
+    
+})
 rollDiceBtn.addEventListener("click",()=>{
      if(rolls < 3) {
           diceRoller()
