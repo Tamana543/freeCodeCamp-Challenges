@@ -31,6 +31,7 @@ diceValuesArr = []
      
      // console.log(diceValuesArr);
 }
+
 const updateStats = ()=>{
      roundElement.textContent = round;
      rollsElement.textContent = rolls
@@ -83,7 +84,17 @@ scoreInputs[index].disabled =false;
 scoreInputs[index].value = score;
 scoreSpans[index].textContent = `, score = ${score}`;
 }
+// to keep the score you selected and move onto the next round.
+const updateScore = (value, id)=>{
+const newScore = parseInt(value)
+score += newScore
+totalScoreElement.textContent = score
 
+const li = document.createElement("li")
+li.textContent= `${id} : ${newScore}`
+scoreHistory.appendChild(li)
+// scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
+};
 rollDiceBtn.addEventListener("click",()=>{
      if(rolls < 3) {
           diceRoller()
