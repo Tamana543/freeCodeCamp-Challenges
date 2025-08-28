@@ -16,19 +16,7 @@ let round = 1;
 let diceValuesArr = [];
 let isModalShowing = false;
 
-rulesBtn.addEventListener("click",()=>{
-     isModalShowing = !isModalShowing;// new trick
-     if(isModalShowing){
-          rulesContainer.style.display = "block";
-          
-          rulesBtn.textContent = "Hide rules"
-     }else {
-          rulesContainer.style.display = "none";
-          
-          rulesBtn.textContent = "Show rules"
 
-     }
-})
 const diceRoller = ()=>{
 diceValuesArr = []
 
@@ -47,7 +35,17 @@ const updateStats = ()=>{
      roundElement.textContent = round;
      rollsElement.textContent = rolls
 }
+const resetRadioOptions = ()=>{
+     scoreInputs.forEach(item=>{
+          item.disabled = true
+          item.checked = false
 
+     })
+     scoreSpans.forEach(item=>{
+     item.textContent = ""
+
+     })
+}
 const getHighestDuplicates = (array)=>{
 const numCounter ={} ;
 let highestCount = 0; 
@@ -80,6 +78,11 @@ if(highestCount>=3){
 updateRadioOption(5,0)
 
 }
+const updateRadioOption = (index,score)=>{
+scoreInputs[index].disabled =false;
+scoreInputs[index].value = score;
+scoreSpans[index].textContent = `, score = ${score}`;
+}
 
 rollDiceBtn.addEventListener("click",()=>{
      if(rolls < 3) {
@@ -93,10 +96,17 @@ rollDiceBtn.addEventListener("click",()=>{
           alert("Select Your score, no more role greather than 3")
      }
 })
+rulesBtn.addEventListener("click",()=>{
+     isModalShowing = !isModalShowing;// new trick
+     if(isModalShowing){
+          rulesContainer.style.display = "block";
+          
+          rulesBtn.textContent = "Hide rules"
+     }else {
+          rulesContainer.style.display = "none";
+          
+          rulesBtn.textContent = "Show rules"
 
-const updateRadioOption = (index,score)=>{
-scoreInputs[index].disabled =false;
-scoreInputs[index].value = score;
-scoreSpans[index].textContent = `, score = ${score}`;
-}
+     }
+})
 
