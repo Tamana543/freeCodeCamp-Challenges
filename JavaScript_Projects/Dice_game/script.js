@@ -76,7 +76,7 @@ if(highestCount >= 4){
 if(highestCount>=3){
      updateRadioOption(0,sum)
 }
-updateRadioOption(5,0)
+
 
 }
 const updateRadioOption = (index,score)=>{
@@ -120,7 +120,7 @@ count[i] = count[i]? count[i]+ 1 : 1
 if(Object.values(count).includes(3) && Object.values(count).includes(2)){
      updateRadioOption(2,25)
 }
-updateRadioOption(5,0)
+
 }
 const checkForStraights = (nums)=>{
      const sortCounter = nums.sort((a,b)=>a-b)
@@ -134,7 +134,11 @@ const checkForStraights = (nums)=>{
           // some : tests whether at least one element in the array passes the test implemented by the provided function. 
           updateRadioOption(3,30)
      }
-     updateRadioOption(5,0)
+  
+}
+function funcCaller(func){
+     func(diceValuesArr)
+  updateRadioOption(5,0)
 }
 keepScoreBtn.addEventListener("click",()=>{
      let value ;
@@ -170,9 +174,10 @@ rollDiceBtn.addEventListener("click",()=>{
           diceRoller()
           rolls ++;
           updateStats()
-          getHighestDuplicates(diceValuesArr)
-          detectFullHouse(diceValuesArr)
-          rollDiceBtn(diceValuesArr)
+          funcCaller(getHighestDuplicates)
+          funcCaller(detectFullHouse)
+          funcCaller(checkForStraights)
+        
      }else {
           rollDiceBtn.disabled = true
           alert("Select Your score, no more role greather than 3")
