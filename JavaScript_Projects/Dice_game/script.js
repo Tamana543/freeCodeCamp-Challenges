@@ -110,6 +110,18 @@ const resetGame = ()=>{
      roundElement.textContent = round;
   resetRadioOptions()
 }
+const detectFullHouse = (array)=>{
+//work here
+const count= {}
+for(const i of array){
+count[i] = count[i]? count[i]+ 1 : 1
+}
+
+if(Object.values(count).includes(3) && Object.values(count).includes(2)){
+     updateRadioOption(2,25)
+}
+updateRadioOption(5,0)
+}
 keepScoreBtn.addEventListener("click",()=>{
      let value ;
      let id;
@@ -145,6 +157,7 @@ rollDiceBtn.addEventListener("click",()=>{
           rolls ++;
           updateStats()
           getHighestDuplicates(diceValuesArr)
+          detectFullHouse(diceValuesArr)
 
      }else {
           rollDiceBtn.disabled = true
