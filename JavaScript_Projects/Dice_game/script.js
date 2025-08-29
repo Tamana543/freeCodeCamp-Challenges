@@ -122,6 +122,20 @@ if(Object.values(count).includes(3) && Object.values(count).includes(2)){
 }
 updateRadioOption(5,0)
 }
+const checkForStraights = (nums)=>{
+     const sortCounter = nums.sort((a,b)=>a-b)
+     const uniqueNumber = [...new Set(sortCounter)].join("")
+     let largeStraigh  = ["12345", "23456"];
+     let smallStraigh = ["1234", "2345", "3456"];
+     if(largeStraigh.includes(uniqueNumber)){
+          updateRadioOption(4,40)
+     }
+     if(smallStraigh.some(item => uniqueNumber.includes(item))){
+          // some : tests whether at least one element in the array passes the test implemented by the provided function. 
+          updateRadioOption(3,30)
+     }
+     updateRadioOption(5,0)
+}
 keepScoreBtn.addEventListener("click",()=>{
      let value ;
      let id;
@@ -158,7 +172,7 @@ rollDiceBtn.addEventListener("click",()=>{
           updateStats()
           getHighestDuplicates(diceValuesArr)
           detectFullHouse(diceValuesArr)
-
+          rollDiceBtn(diceValuesArr)
      }else {
           rollDiceBtn.disabled = true
           alert("Select Your score, no more role greather than 3")
