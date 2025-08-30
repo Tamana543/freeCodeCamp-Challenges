@@ -7,7 +7,7 @@ body {
      height: 100vh;
      font-size: 10px;
        background-color: rgba(22, 22, 22, 0.87);
-
+color: #ffffffa5;
 }
 .flex {
      display: flex;
@@ -27,7 +27,7 @@ body {
 }
 form {
 width: 80%;
-height: 80%;
+height: 50%;
 flex-direction: column;
 gap: 4%;
 }
@@ -42,13 +42,17 @@ font-size: 1.2rem;
 }
 button:hover {
          transform: scale(1.1);
+     }
+#change-due{
+font-size: 1.2rem;
 }
+
 #cash{
      background-color: #323030;
      outline: none;
      border: none;
      box-shadow:  inset -1px -1px 16px -1px rgba(101, 3, 3, 0.87);
         width: 60%;
-    height: 13%;
+    height: 23%;
 padding: 2%;
 }
