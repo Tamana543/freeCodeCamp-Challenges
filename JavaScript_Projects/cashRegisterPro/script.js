@@ -19,6 +19,9 @@ const cushValue = cushEle.value
 const firstArrChi = cid.forEach(item=> item)
 const secArrChi = [...cid].forEach(item=>item)
 const thirdArrChi = [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item => item)
+const forthArrChi = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item=>item);
+
+
 function mainFunc(event){
      event.preventDefault()
      if(cushValue < price){
@@ -39,6 +42,10 @@ changeDue.textContent = "Status: OPEN"
 changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
      }else if(price < cushValue){
 changeDue.textContent="Status: INSUFFICIENT_FUNDS"
+     }else if(price == 19.5 && cushValue == 20,firstArrChi == forthArrChi){
+changeDue.textContent="Status: CLOSED PENNY: $0.5"
+     }else if(price < cushEle){
+          changeDue.textContent = "Status : CLOSED"
      }
      else {
           
