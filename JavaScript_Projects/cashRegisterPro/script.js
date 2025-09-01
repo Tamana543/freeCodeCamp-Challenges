@@ -14,7 +14,7 @@ let cid = [
   ['TWENTY', 60],
   ['ONE HUNDRED', 100]
 ];
-const cushValue = cushEle.value
+let cushValue = Number(cushEle.value);
 
 const firstArrChi = cid.forEach(item=> item)
 const secArrChi = [...cid].forEach(item=>item)
@@ -26,7 +26,7 @@ function mainFunc(event){
      event.preventDefault()
      if(cushValue < price){
           alert("Customer does not have enough money to purchase the item")
-     }else if (cushValue == price){
+     }else if (cushValue === price){
      changeDue.textContent="No change due - customer paid with exact cash"
      }else if(price== 20 && cushValue == 10 ){
           alert("Customer does not have enough money to purchase the item")
@@ -51,7 +51,7 @@ changeDue.textContent="Status: CLOSED PENNY: $0.5"
           
           console.log("me");
      }
-     console.log(cushValue);
+     // console.log(cushValue);
      cushEle.value = ""
 
 }
