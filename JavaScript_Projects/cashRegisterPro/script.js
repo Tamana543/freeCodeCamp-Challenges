@@ -62,6 +62,33 @@ function mainFunc(event){
           changeArr.push([name,toReturn])
          }
      }
+
+     // the remaining cash counter
+
+     let remainingCID = cid.map(([name,amount])=>{
+          let used = changeArr.find(([n])=> n === name)
+          if(used){
+               return [name, Math.round((amount-used[1]) * 100) / 100]
+          }else {
+               return [name,amount]
+          }
+     });
+
+     let totalRemaining = Math.round(remainingCID.reduce((sum,[_,a])=> sum + a , 0) * 100) / 100
+
+
+     // last chickPoint 
+     if(change > 0){
+          changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
+     }else if(totalRemaining === 0){
+// WITHDRAWL END
+let closedStr = remainingCID.map(([n,a])=> `${n}: $${a}`).join(" ");
+    changeDue.textContent = "Status: CLOSED " + closedStr;
+     }else {
+    let openStr = changeArr.map(([n, a]) => `${n}: $${a}`).join(" ");
+    changeDue.textContent = "Status: OPEN " + openStr;
+  }
+
      cushEle.value = ""
 
 }
