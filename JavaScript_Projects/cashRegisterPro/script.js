@@ -16,10 +16,18 @@ let cid = [
 ];
 let cushValue = Number(cushEle.value);
 
-const firstArrChi = cid.forEach(item=> item)
-const secArrChi = [...cid].forEach(item=>item)
-const thirdArrChi = [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item => item)
-const forthArrChi = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item=>item);
+const secObj = {
+  "PENNY": 0.01,
+  "NICKEL": 0.05,
+  "DIME": 0.10,
+  "QUARTER": 0.25,
+  "ONE": 1,
+  "FIVE": 5,
+  "TEN": 10,
+  "TWENTY": 20,
+  "ONE HUNDRED": 100
+};
+
 
 
 function mainFunc(event){
@@ -40,12 +48,32 @@ function mainFunc(event){
      let changeArr = [];
      // console.log(cushValue);
 
-     
+     // col the changes
+     for(let [name,amount] of drawer){
+          let denomValue = secObj[name];
+          let toReturn  = 0 ; 
+
+         while(change >= denomValue && amount >=denomValue){
+          change =Math.round((change-denomValue)* 100) / 100;
+          amount = Math.round((amount-denomValue) * 100) / 100;
+          toReturn = Math.round((toReturn + denomValue) * 100)/ 100
+         } 
+         if(toReturn > 0) {
+          changeArr.push([name,toReturn])
+         }
+     }
      cushEle.value = ""
 
 }
 submitBtn.addEventListener("click",mainFunc)
  /**
+  
+// const firstArrChi = cid.forEach(item=> item)
+// const secArrChi = [...cid].forEach(item=>item)
+// const thirdArrChi = [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item => item)
+// const forthArrChi = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item=>item);
+
+ //inside Fun
   else if(price== 20 && cushValue == 10 ){
           alert("Customer does not have enough money to purchase the item")
      }else if(price==11.95 && cushValue == 11.95 ){
