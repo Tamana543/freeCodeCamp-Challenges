@@ -57,19 +57,20 @@ function mainFunc(event){
      // console.log(cushValue);
 
      // col the changes
-     for(let [name,amount] of drawerDesc){
-          let denomValue = secObj[name];
-          let toReturn  = 0 ; 
+     for (let i = 0; i < drawerDesc.length; i++) {
+    const [name, available] = drawerDesc[i];
+    const val = secObj[name];
+    let give = 0;
+    let left = Math.round(available * 100) / 100;
 
-         while(change >= denomValue && amount >=denomValue){
-          change =Math.round((change-denomValue)* 100) / 100;
-          amount = Math.round((amount-denomValue) * 100) / 100;
-          toReturn = Math.round((toReturn + denomValue) * 100)/ 100
-         } 
-         if(toReturn > 0) {
-          changeArr.push([name,toReturn])
-         }
-     }
+    while (change >= val && left >= val) {
+      change = Math.round((change - val) * 100) / 100;
+      left = Math.round((left - val) * 100) / 100;
+      give = Math.round((give + val) * 100) / 100;
+    }
+
+    if (give > 0) changeArr.push([name, give]);
+  }
 
      // the remaining cash counter
 
@@ -101,35 +102,3 @@ let closedStr = remainingCID.map(([n,a])=> `${n}: $${a}`).join(" ");
 
 }
 submitBtn.addEventListener("click",mainFunc)
- /**
-  
-// const firstArrChi = cid.forEach(item=> item)
-// const secArrChi = [...cid].forEach(item=>item)
-// const thirdArrChi = [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item => item)
-// const forthArrChi = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]].forEach(item=>item);
-
- //inside Fun
-  else if(price== 20 && cushValue == 10 ){
-          alert("Customer does not have enough money to purchase the item")
-     }else if(price==11.95 && cushValue == 11.95 ){
-          changeDue.textContent="No change due - customer paid with exact cash"
-     }else if(price == 19.5 && cushValue == 20 && firstArrChi== secArrChi){
-changeDue.textContent = "Status: OPEN QUARTER: $0.5"
-     }else if(price == 3.26 && cushValue == 100 && firstArrChi== secArrChi){
-changeDue.textContent="Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"
-     }else if(price<cushEle && firstArrChi > secArrChi){
-changeDue.textContent = "Status: OPEN"
-     }else if(price ==19.5 && cushValue == 20 && firstArrChi == thirdArrChi){
-changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
-     }else if(price < cushValue){
-changeDue.textContent="Status: INSUFFICIENT_FUNDS"
-     }else if(price == 19.5 && cushValue == 20,firstArrChi == forthArrChi){
-changeDue.textContent="Status: CLOSED PENNY: $0.5"
-     }else if(price < cushEle){
-          changeDue.textContent = "Status : CLOSED"
-     }
-     else {
-          
-          console.log("me");
-     }
-  */
