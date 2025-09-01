@@ -24,11 +24,29 @@ const forthArrChi = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0],
 
 function mainFunc(event){
      event.preventDefault()
+     let change = Math.round((cushValue-price)*100) / 100;
+     let totalCID = Math.round(cid.reduce((sum,[_,amount])=> sum + amount, 0) * 100)/100
+
      if(cushValue < price){
           alert("Customer does not have enough money to purchase the item")
-     }else if (cushValue === price){
-     changeDue.textContent="No change due - customer paid with exact cash"
-     }else if(price== 20 && cushValue == 10 ){
+          cushEle.value =""
+          return
+     }else if (change === 0){
+     changeDue.textContent="No change due - customer paid with exact cash";
+     cushEle.value= ""
+     return;
+     }
+     let drawer = [...cid].reverse();
+     let changeArr = [];
+     // console.log(cushValue);
+
+     
+     cushEle.value = ""
+
+}
+submitBtn.addEventListener("click",mainFunc)
+ /**
+  else if(price== 20 && cushValue == 10 ){
           alert("Customer does not have enough money to purchase the item")
      }else if(price==11.95 && cushValue == 11.95 ){
           changeDue.textContent="No change due - customer paid with exact cash"
@@ -51,8 +69,4 @@ changeDue.textContent="Status: CLOSED PENNY: $0.5"
           
           console.log("me");
      }
-     // console.log(cushValue);
-     cushEle.value = ""
-
-}
-submitBtn.addEventListener("click",mainFunc)
+  */
