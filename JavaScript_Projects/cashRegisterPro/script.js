@@ -44,12 +44,20 @@ function mainFunc(event){
      cushEle.value= ""
      return;
      }
-     let drawer = [...cid].reverse();
+     // the drawer change 
+     if(totalCID === change){
+          const closedStr = [...cid].slice().sort((a,b)=>secObj[b[0]]-secObj[a[0]]).filter(([_,amount]) => amount> 0).map(([name,amount])=>`${name}: $${fmt(amount)}`).join(" ")
+          changeDue.textContent= `Status: CLOSED ${closedStr}`;
+          cushEle.value="";
+          return;
+     }
+
+       const drawerDesc = [...cid].slice().sort((a, b) => secObj[b[0]] - secObj[a[0]]);
      let changeArr = [];
      // console.log(cushValue);
 
      // col the changes
-     for(let [name,amount] of drawer){
+     for(let [name,amount] of drawerDesc){
           let denomValue = secObj[name];
           let toReturn  = 0 ; 
 
