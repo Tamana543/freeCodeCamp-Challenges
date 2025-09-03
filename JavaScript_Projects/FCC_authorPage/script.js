@@ -11,12 +11,17 @@ fetch(
      displayAuthors(authorDataArr.slice(startingIndex,endingIndex))
 }).catch(err=>console.log(`There was an error: ${err}`))
 
+const fetchMoreAuthors = ()=>{
+     startingIndex += 8 
+     endingIndex += 8
+     displayAuthors(authorDataArr.slice(startingIndex,endingIndex))
+}
 let startingIndex= 0;
 let endingIndex= 8;
 let authorDataArr= [];
 
 const displayAuthors =(authors)=>{
-authors.forEach(([author,image,url,bio],index)=> {
+authors.forEach(({author,image,url,bio},index)=> {
      authorContainer.innerHTML+=`
      <div id="${index}" class="user-card">
      <h2 class="author-name">${author}</h2>
@@ -27,3 +32,4 @@ authors.forEach(([author,image,url,bio],index)=> {
      `
 });
 } ;
+loadMoreBtn.addEventListener("click",fetchMoreAuthors)
