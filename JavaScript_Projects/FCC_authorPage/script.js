@@ -15,6 +15,11 @@ const fetchMoreAuthors = ()=>{
      startingIndex += 8 
      endingIndex += 8
      displayAuthors(authorDataArr.slice(startingIndex,endingIndex))
+     // chick if it is the end or not 
+     if(authorDataArr.length <= endingIndex){
+loadMoreBtn.disabled = true;
+loadMoreBtn.textContent = "No more data to load"
+     }
 }
 let startingIndex= 0;
 let endingIndex= 8;
@@ -26,6 +31,7 @@ authors.forEach(({author,image,url,bio},index)=> {
      <div id="${index}" class="user-card">
      <h2 class="author-name">${author}</h2>
       <img src="${image}" alt="${author} avatar" class="user-img">
+      <div class="purple-divider"></div>
       <p class="bio">${bio}</p>
        <a href="${url}" target="_blank" class="author-link">${author}'s author page</a>
      </div>
