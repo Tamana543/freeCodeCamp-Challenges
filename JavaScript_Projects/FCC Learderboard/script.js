@@ -35,7 +35,7 @@ const {topics} = topic_list;
 
      <td>${posts_count - 1}</td>
 
-     <td>${views}</td>
+     <td>${viewCount(views)}</td>
      <td>${timeAgo(bumped_at)}</td>
      </tr>
      `
@@ -60,3 +60,12 @@ if(minutes < 60){
      return `${days}d ago`
 } 
 }
+
+function viewCount(views){
+ if (views >= 1000) {
+     return `${Math.floor(views/1000)}k`
+ } else {
+     return views
+ }
+}
+// console.log(viewCount(200))
