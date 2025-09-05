@@ -36,9 +36,27 @@ const {topics} = topic_list;
      <td>${posts_count - 1}</td>
 
      <td>${views}</td>
-     <td></td>
+     <td>${timeAgo(bumped_at)}</td>
      </tr>
      `
      
  }).join("")
+}
+
+function timeAgo(time){
+     const currentTime = new Date();
+     const lastPost =new Date(time) ;
+// subtract the currentTime and lastPost to find last activity 
+// console.log(currentTime - lastPost);
+
+const minutes = Math.floor((currentTime - lastPost) / 60000);
+const hours = Math.floor((currentTime - lastPost) / 3600000);
+const days = Math.floor((currentTime - lastPost) / 86400000);
+if(minutes < 60){
+     return `${minutes}m ago`
+}else if(hours < 24) {
+     return `${hours}h ago`
+}else {
+     return `${days}d ago`
+} 
 }
