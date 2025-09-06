@@ -68,6 +68,7 @@ const {topics} = topic_list;
      <tr>
      <td>
      <p class="post-title">${title}</p>
+     ${forumCategory(category_id)}
      </td>
 
      <td></td>
@@ -121,5 +122,17 @@ if(allCategories.hasOwnProperty(id)){
 const url = `${forumCategoryUrl}${selectedCategory.className}/${id}`
 const linkText = selectedCategory.category;
 const linkClass = `category ${selectedCategory.className}`
+return `<a href="${url}" class="${linkClass}" target="_blank">${linkText}</a>`
+}
+const avatars = (posters,users)=>{
+return posters.map(poster=>{
+     const user = users.find((user)=>user.id === poster.user_id)
+     if(user){
+          const avatar = user.avatar_template.replace(/{size}/,30)
+            const userAvatarUrl = avatar.startsWith("/user_avatar/")
+        ? avatarUrl.concat(avatar)
+        : avatar;
+     }
+})
 }
 // console.log(viewCount(200))
