@@ -67,11 +67,15 @@ const {topics} = topic_list;
      return `
      <tr>
      <td>
-     <p class="post-title">${title}</p>
+     <a class="post-title" href="${forumTopicUrl}${slug}/${id}" target="_blank">${title}</a>
      ${forumCategory(category_id)}
      </td>
 
-     <td></td>
+     <td>
+     <div class="avatar-container">
+     ${avatars(posters,users)}
+     </div>
+     </td>
 
      <td>${posts_count - 1}</td>
 
@@ -132,7 +136,8 @@ return posters.map(poster=>{
             const userAvatarUrl = avatar.startsWith("/user_avatar/")
         ? avatarUrl.concat(avatar)
         : avatar;
+        return `<img src="${userAvatarUrl}" alt="${user.name}" >`
      }
-})
+}).join("")
 }
 // console.log(viewCount(200))
