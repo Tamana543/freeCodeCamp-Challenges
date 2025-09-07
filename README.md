@@ -58,4 +58,8 @@
 
 ### Project 19 Dice Game
 
-### Project 20 FCC author page( nothing special just fetching API and load more btn)
+### Project 20 FCC author page( nothing Tricky just fetching API and load more btn)
+
+### Project 21 FCC Learderboard( nothing Tricky just Async data)
+
+### Project 22 RPG Creature Search App
