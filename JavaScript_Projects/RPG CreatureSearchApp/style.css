@@ -38,7 +38,7 @@ justify-content: center;
 align-items: center;
 }
 .container {
-  width: 325px;
+  width: 50%;
   margin: 25px 0;
   background-color: #f5f6f7;
   border: 1px solid #f5f6f7;
@@ -155,7 +155,7 @@ label {
   font-size: 1 rem;
   /* color: #f5f6f7;
   background-color: #7f21ab; */
-  margin-top: 5%;
+  margin: 5%;
 }
 p {
   color: #f5f6f7;
@@ -243,7 +243,7 @@ p {
   }
 
   .container {
-    width: 450px;
+    width: 60%;
   }
 
   #search-form,
