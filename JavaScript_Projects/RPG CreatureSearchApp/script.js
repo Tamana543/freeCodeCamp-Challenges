@@ -9,39 +9,61 @@ const attack = document.getElementById("attack");
 const defense = document.getElementById("defense");
 const specialAttack = document.getElementById("special-attack");
 const specialDefence = document.getElementById("special-defense");
+const  specialDescription = document.getElementById("special-description")
+const specialName = document.getElementById("special-name")
 const speed = document.getElementById("speed");
 const tyes = document.getElementById("types")
-function mainEng(event){
+async function mainEng(event){
  event.preventDefault()
      // console.log(searchInput.value);
      try {
-          if(searchInput.value=="Red"){
-          alert("Creature not found")
-     }else if(searchInput.value == "Pyrolynx"){
-          creatureName.textContent="PYROLYNX"
-     creatureID.textContent = '#1'
-          weight.textContent="Weight: 42"
-          height.textContent="Height: 32"
-          hp.textContent=65
-          attack.textContent=80
-          defense.textContent= 50
-          specialAttack.textContent= 90
-          specialDefence.textContent = 55
-          speed.textContent = 100
-     }else if(searchInput.value == 2){
-            creatureName.textContent="AQUOROC"
-     creatureID.textContent = '#2'
-          weight.textContent="Weight: 220"
-          height.textContent="Height: 53"
-          hp.textContent= 85
-          attack.textContent= 90
-          defense.textContent= 120
-          specialAttack.textContent= 60
-          specialDefence.textContent = 70
-          speed.textContent = 40
-     }else {
-          alert("Creature not found")
-     }
+          const SearchInputVolue = searchInput.value.toLowerCase();
+          const link = await fetch(
+      `https://rpg-creature-api.freecodecamp.rocks/api/creature/${SearchInputVolue}`
+    );
+    const data = await link.json()
+    console.log(data);
+    // Showing data
+    creatureName.textContent = `${data.name.toUpperCase()}`
+     creatureID.textContent = `${data.id}`
+          weight.textContent= `${data.weight}`
+          height.textContent=`${data.height}`
+          hp.textContent=`${data.stats[0].base_stat}`
+          attack.textContent= `${data.stats[1].base_stat}`
+          defense.textContent= `${data.stats[2].base_stat}`
+          specialAttack.textContent=`${data.stats[3].base_stat}`
+          specialDefence.textContent = `${data.stats[4].base_stat}`
+          speed.textContent = `${data.stats[5].base_stat}`
+          specialName.textContent = data.special.name
+          specialName.textContent = data.special.description;
+
+     //      if(searchInput.value=="Red"){
+     //      alert("Creature not found")
+     // }else if(searchInput.value == "Pyrolynx"){
+     //      creatureName.textContent="PYROLYNX"
+     // creatureID.textContent = '#1'
+     //      weight.textContent="Weight: 42"
+     //      height.textContent="Height: 32"
+     //      hp.textContent=65
+     //      attack.textContent=80
+     //      defense.textContent= 50
+     //      specialAttack.textContent= 90
+     //      specialDefence.textContent = 55
+     //      speed.textContent = 100
+     // }else if(searchInput.value == 2){
+     //        creatureName.textContent="AQUOROC"
+     // creatureID.textContent = '#2'
+     //      weight.textContent="Weight: 220"
+     //      height.textContent="Height: 53"
+     //      hp.textContent= 85
+     //      attack.textContent= 90
+     //      defense.textContent= 120
+     //      specialAttack.textContent= 60
+     //      specialDefence.textContent = 70
+     //      speed.textContent = 40
+     // }else {
+     //      alert("Creature not found")
+     // }
      } catch (error) {
        console.log(error);
 
@@ -68,6 +90,4 @@ const resetDisplay = () => {
   speed.textContent = '';
   searchInput.value = ""
 };
-searchBtn.addEventListener("click",(event)=>{
-    
-})
+searchBtn.addEventListener("click",mainEng)
