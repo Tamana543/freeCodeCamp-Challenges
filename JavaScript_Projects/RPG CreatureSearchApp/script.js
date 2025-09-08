@@ -11,11 +11,11 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefence = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 const tyes = document.getElementById("types")
-
-searchBtn.addEventListener("click",(event)=>{
-     event.preventDefault()
+function mainEng(event){
+ event.preventDefault()
      // console.log(searchInput.value);
-     if(searchInput.value=="Red"){
+     try {
+          if(searchInput.value=="Red"){
           alert("Creature not found")
      }else if(searchInput.value == "Pyrolynx"){
           creatureName.textContent="PYROLYNX"
@@ -28,8 +28,6 @@ searchBtn.addEventListener("click",(event)=>{
           specialAttack.textContent= 90
           specialDefence.textContent = 55
           speed.textContent = 100
-     }else if(searchInput.value == "search-input"){
-
      }else if(searchInput.value == 2){
             creatureName.textContent="AQUOROC"
      creatureID.textContent = '#2'
@@ -41,7 +39,35 @@ searchBtn.addEventListener("click",(event)=>{
           specialAttack.textContent= 60
           specialDefence.textContent = 70
           speed.textContent = 40
+     }else {
+          alert("Creature not found")
      }
+     } catch (error) {
+       console.log(error);
 
-     searchInput.value = ""
+       resetDisplay()
+     }
+     
+     
+}
+
+const resetDisplay = () => {
+     // reset stats
+     creatureName.textContent = '';
+     creatureID.textContent = '';
+     height.textContent = '';
+     weight.textContent = '';
+  tyes.innerHTML = '';
+  specialName.innerHTML = '';
+  specialDescription.innerHTML = '';
+  hp.textContent = '';
+  attack.textContent = '';
+  defense.textContent = '';
+  specialAttack.textContent = '';
+  specialDefence.textContent = '';
+  speed.textContent = '';
+  searchInput.value = ""
+};
+searchBtn.addEventListener("click",(event)=>{
+    
 })
