@@ -11,3 +11,23 @@ const specialAttack = document.getElementById("special-attack");
 const specialDefence = document.getElementById("special-defense");
 const speed = document.getElementById("speed");
 
+
+searchBtn.addEventListener("click",(event)=>{
+     event.preventDefault()
+     // console.log(searchInput.value);
+     if(searchInput.value=="Red"){
+          alert("Creature not found")
+     }else if(searchInput.value == "Pyrolynx"){
+          creatureName.textContent="PYROLYNX 1"
+          weight.textContent="Weight: 42"
+          height.textContent="Height: 32"
+          hp.textContent=65
+          attack.textContent=80
+          defense.textContent= 50
+          specialAttack.textContent= 90
+          specialDefence.textContent = 55
+          speed.textContent = 100
+     }
+
+     searchInput.value = ""
+})
