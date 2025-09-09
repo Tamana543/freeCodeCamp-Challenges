@@ -5,13 +5,15 @@ const resultDiv = document.getElementById("results-div");
 
 checkBtn.addEventListener("click", () => {
   const input = userInput.value.trim();
-
+   
+  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})([\s-]?)\d{3}([\s-]?)\d{4}$/;
+  
   if (input === "") {
     alert("Please provide a phone number");
     return;
   }
 
-  if (isValidUSPhoneNumber(input)) {
+  if (regex.test(input)) {
     resultDiv.textContent = `Valid US number: ${input}`;
   } else {
     resultDiv.textContent = `Invalid US number: ${input}`;
@@ -24,11 +26,3 @@ clearBtn.addEventListener("click", () => {
   resultDiv.textContent = "";
 });
 
-// VALIDATOR FUNCTION / work more !!!!
-
-
-
-function isValidUSPhoneNumber(str) {
-  const pattern =  [/^1? ?(( ?\d{3} [- ]*)|(\( ?\d{3}[- ]*\) *))\d{3}[- ]?\d{4}$/gm, /\d{10}/gm, /\d*\(\d[\d)]{3}\d{3}-\d{4}/gm, /\d{3}-\d{3}-\d{4}/gm, /^\d\s\d{3}-\d{3}-\d{4}/gm];
-  return pattern.test(str);
-}
